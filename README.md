@@ -10,3 +10,4 @@ QuickLit is a preemptive solution to a future problem this generation will face.
 
  QuickLit is a simple, sweet, and shareable social media dedicated to reviews, discussions, and profiles where you can show your 
  reading interests and habits.
+ 
