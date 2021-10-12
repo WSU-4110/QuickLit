@@ -1,3 +1,38 @@
-#greeting {
-    color: aqua;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+    --amplify-primary-color: #2B5C94;
+    --amplify-primary-tint: #265081;
+    --amplify-primary-shade: #265081;
 }
+
+#under-construction-img {
+    max-width: 50%;
+    margin-left: 50%;
+    // margin-top: 5%;
+    transform: translate(-50%, 0);
+}
+.under-construction-statement {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+.big-font{
+    font-size: 5rem;
+}
+#signout-btn{
+    width: 10rem;
+    margin: 1rem;
+    float: right;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    #under-construction-img {
+        max-width: 100%;
+        // margin-top: 5%;
+    }
+    .big-font{
+        font-size: 3rem;
+    }
+  }
