@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-quicklit-staging-40955-authRole",
+      "UnauthRoleArn": "arn:aws:iam::165390145541:role/amplify-quicklit-staging-40955-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::165390145541:role/amplify-quicklit-staging-40955-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-quicklit-staging-40955-deployment",
+      "UnauthRoleName": "amplify-quicklit-staging-40955-unauthRole",
+      "StackName": "amplify-quicklit-staging-40955",
+      "StackId": "arn:aws:cloudformation:us-east-2:165390145541:stack/amplify-quicklit-staging-40955/179bfa00-2a49-11ec-8f7e-02e42fe6017a",
+      "AmplifyAppId": "d3631tv0ydd7mb"
+    },
+    "categories": {
+      "auth": {
+        "quickLit": {}
+      }
+    }
+  }
+}

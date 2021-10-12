@@ -1,0 +1,30 @@
+type Like @model @auth(rules: [{allow: public}]) @key(name: "byPost", fields: ["postID"]) {
+  id: ID!
+  authorID: String!
+  postID: ID!
+}
+
+type Comment @model @auth(rules: [{allow: public}]) @key(name: "byPost", fields: ["postIDs"]) {
+  id: ID!
+  postIDs: ID!
+  authorID: String!
+  content: String!
+}
+
+type Post @model @key(name: "byUser", fields: ["authorID"]) @auth(rules: [{allow: public}]) {
+  id: ID!
+  authorID: ID!
+  contentText: String!
+  comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
+  publicationTime: AWSDateTime!
+  likes: [Like] @connection(keyName: "byPost", fields: ["id"])
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: AWSEmail!
+  birthDate: AWSDate!
+  posts: [Post] @connection(keyName: "byUser", fields: ["id"])
+}

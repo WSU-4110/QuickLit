@@ -18,6 +18,12 @@ module.exports = {
         ],
       },
       {
+        test: /\.m?jsx?$/,
+        resolve: {
+          fullySpecified: false
+        }        
+      },
+      {
         test: /\.scss$/i,
         use: [
             'style-loader', 
