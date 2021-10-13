@@ -1,10 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+$font-style: "Poppins", sans-serif;
 :root {
     --amplify-primary-color: #2B5C94;
     --amplify-primary-tint: #265081;
     --amplify-primary-shade: #265081;
+    font-family: "Poppins", sans-seri;
 }
+body{
+	margin:0;
+	padding:0;
+}
+.navbar{
+    background-color: #b9c9da;
+    transition: background-color 1s linear;
+    ul {
+        width: 100%;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        li {
+            transition: transform 250ms;
+            a:link, a:visited {
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+            }
+            a:hover {
+                color: #2B5C94;
+                text-decoration: underline;
+            }
+        }
+        .nav-item{    
+            text-transform: uppercase;
+            &:hover{
+                transform: scale(1.3, 1.3);
+            }
+        }
+    }
+    &:hover{
+        background-color: rgba(228, 239, 252, 0.8);
+    }
+} 
 
 #under-construction-img {
     max-width: 50%;
@@ -19,12 +58,25 @@
 .big-font{
     font-size: 5rem;
 }
+#quick-lit{
+    display: inline;
+    animation: color-change 1s infinite;
+}
 #signout-btn{
     width: 10rem;
     margin: 1rem;
     float: right;
     border-radius: 10px;
     overflow: hidden;
+}
+
+@keyframes color-change {
+    0% { color: #295B94; }
+    20% { color: #03DA63; }
+    40% { color: #03DA63; }
+    60% { color: #ABD2FD; }
+    80% { color: #ABD2FD; }
+    100% { color: #295B94; }
 }
 
 @media only screen and (max-width: 600px) {
