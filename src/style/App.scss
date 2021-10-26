@@ -2,48 +2,12 @@
 
 $font-style: "Poppins", sans-serif;
 :root {
-    --amplify-primary-color: #2B5C94;
-    --amplify-primary-tint: #265081;
-    --amplify-primary-shade: #265081;
     font-family: "Poppins", sans-seri;
 }
 body{
 	margin:0;
 	padding:0;
 }
-.navbar{
-    background-color: #b9c9da;
-    transition: background-color 1s linear;
-    ul {
-        width: 100%;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        li {
-            transition: transform 250ms;
-            a:link, a:visited {
-                color: rgb(0, 0, 0);
-                text-decoration: none;
-            }
-            a:hover {
-                color: #2B5C94;
-                text-decoration: underline;
-            }
-        }
-        .nav-item{    
-            text-transform: uppercase;
-            &:hover{
-                transform: scale(1.3, 1.3);
-            }
-        }
-    }
-    &:hover{
-        background-color: rgba(228, 239, 252, 0.8);
-    }
-} 
 
 #under-construction-img {
     max-width: 50%;
