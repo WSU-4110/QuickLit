@@ -39,7 +39,6 @@ module.exports = {
             limit: 10000,
           }
         }],
-        // type: 'asset/resource',
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
@@ -50,6 +49,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '..', './build'),
     filename: 'bundle.js',
+    publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -57,4 +57,7 @@ module.exports = {
     }),
   ],
   stats: 'errors-only',
+  devServer: {
+    historyApiFallback: true,
+  },
 }
