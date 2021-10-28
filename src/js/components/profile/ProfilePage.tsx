@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import DefaultUserPic from "../../../assets/DefaultUserPic.jpeg";
 const axios = require('axios');
 
+require("../../../style/profile/ProfilePage.scss");
+
 interface userprofile {
     user_id: string[];
     username?: string[];
@@ -81,11 +83,26 @@ render(){
     }else{
          profilePic=DefaultUserPic;
     }
-    
+
     return (
-        <div className="container">
-            <div className="profilebox">
+        <div className="profile-container">
+            <div className="profile-hero">
                 <img src={profilePic} alt="profile pic"/>
+                <div className="details-container">
+                    <header>
+                        <p>@owenmille</p>
+                        <button>3 <small>posts</small></button>
+                        <button>9 <small>books</small></button>
+                        <h1>Owen Miller</h1>
+                    </header>   
+                    <div>
+                        <p>Hello everyone! just made my account so feel free to add me as a friend :)</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* <div className="description-box">
+                
             </div>
             <div className="profilebox">
                 <h1>{this.state.username}</h1>
@@ -95,7 +112,7 @@ render(){
             </div>
             <div className="profilebox">
                 <h1>{this.state.msg}</h1>
-            </div>
+            </div> */}
         </div>
 
         /* 
