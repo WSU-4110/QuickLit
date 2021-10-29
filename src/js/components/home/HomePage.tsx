@@ -1,5 +1,5 @@
 //@ts-ignore
-import underConstructionImage from "../../../assets/under-construction.jpeg";
+import underConstructionImage from "../../../assets/images/under-construction.jpeg";
 
 export function Home() {
     return(
