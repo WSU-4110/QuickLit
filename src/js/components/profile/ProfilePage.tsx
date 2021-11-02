@@ -2,7 +2,6 @@ import React  from 'react';
 //@ts-ignore
 import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
 import Bookshelf from "./Bookshelf";
-
 require("../../../style/profile/ProfilePage.scss");
 
 /* interface userprofile {
