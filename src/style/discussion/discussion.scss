@@ -1,0 +1,42 @@
+$page-background-color:#e3fcff;
+$secondary-background-color:#001022;
+$font-color: #fff;
+.discussion-container{
+    background:$page-background-color;
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+    height:1000px;
+}
+.actualdiscussion{
+    background-color:$secondary-background-color;
+    height:100%;
+    width:60%;
+    padding: 24px 24px;
+    
+    border-radius: 30px;
+    display: flex;
+    //align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    vertical-align: middle;
+    position: relative;
+    align-items: flex-start;
+    .createPost{
+       
+        min-width: 100%;
+        min-height: 20%;
+        
+        
+        
+    }
+    .posts{
+        color: $font-color;
+        min-height: 20%;
+        flex-basis: 33.333%;
+        min-width: 100%;
+        text-align: center;
+        
+       
+    }
+}

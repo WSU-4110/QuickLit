@@ -1,0 +1,33 @@
+$page-background-color:#e3fcff;
+$secondary-background-color:#001022;
+$font-color: #fff;
+.createPost{
+    display: flex;
+   height: 10%;
+   width: 20%; 
+   
+   padding-bottom: 1%;
+    align-items: center;
+    justify-content: center;
+    
+}
+#post{
+    resize: none;
+    float: right;
+    margin-bottom: 10px;
+}
+#postButton{
+    border-radius: 4px;
+    float:right
+}
+#postButton:hover{
+    //box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.11);
+    cursor: pointer;
+    
+}
+#profilepic{
+ padding-right: 0px;
+ height: 56px;
+ width: auto;   
+ border-radius: 50%;
+}
