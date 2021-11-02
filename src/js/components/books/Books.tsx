@@ -64,7 +64,7 @@ class Books extends Component <any, any> {
 
         return (
           <div className="search-container" >
-            <h1>Search Books Here!</h1>
+            <h1>Search Books Here</h1>
             <Searchbar 
                 data={this.state} 
                 handleSubmit={this.handleSubmit} 

@@ -1,7 +1,7 @@
 import React  from 'react';
 //@ts-ignore
 import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
-
+import Bookshelf from "./Bookshelf";
 
 require("../../../style/profile/ProfilePage.scss");
 
@@ -23,7 +23,7 @@ export function UserProfile(){
     /* constructor(props: any){
         super(props);
         this.state={
-            user_id:this.props.user_id,
+            user_id:this.props.user_id
             username:this.props.username,
             email:this.props.email,
             profileImage:this.props.profileImage,
@@ -51,8 +51,17 @@ render(){
                     <div>
                         <p>Hello everyone! just made my account so feel free to add me as a friend :)</p>
                     </div>
+
                 </div>
-            </div>
+                <div className="profile-bookshelf">
+                        <Bookshelf/>
+                </div>
+                <div className="posts-container">
+                    <h1>Recent Posts</h1>
+
+                </div>
+            </div>  
+                
         </div>
     )
 }

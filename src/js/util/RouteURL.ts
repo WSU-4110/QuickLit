@@ -1,7 +1,7 @@
 enum RoutesUrls  {
     HOME = "/",
     DISCUSSION = "/discussion",
-    BOOKSEARCH ="/book",
+    BOOKSEARCH ="/booksearch",
     PROFILE = "/profile",
   }
   

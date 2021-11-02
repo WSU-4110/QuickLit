@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import BookCard from './BookCard';
 
 
-const BookList = (props: any) => {
+const BookList = (props:any) => {
     return (
       <div className="list">
         {

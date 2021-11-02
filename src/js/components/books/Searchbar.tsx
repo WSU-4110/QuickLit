@@ -4,7 +4,7 @@ const Searchbar = (props: any) => {
     return(
         <div className="searchbar">
         <form onSubmit={props.handleSubmit}>
-            <input onChange={props.handleChange} placeholder="Search" type="text"/>
+            <input onChange={props.handleChange} placeholder="search" type="text"/>
             <button type="submit">Search</button>
             {/*
                 FOR ADDING SEARCH FILTERS
