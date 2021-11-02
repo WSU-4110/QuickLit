@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import Navbar from "./components/navbar/Navbar";
 import HomePage from "./components/home/HomePage";
 import BookPage from "./components/books/Books";
 
 import DiscussionPage from "./components/discussion/DiscussionPage";
 import ProfilePage from "./components/profile/ProfilePage";
-
+import SignUpAndLoginPage from './components/auth/SignUpAndLoginPage';
+import RoutesUrls from "./util/RouteURL";
 require('../style/App.scss');
 
 const App = () =>{
@@ -17,6 +19,8 @@ const App = () =>{
               <Route path='/book' component={BookPage} exact />
               <Route path='/discussion' component={DiscussionPage} exact />
               <Route path='/profile' component={ProfilePage} exact />
+              <Route path='/auth' component={SignUpAndLoginPage} exact />
+
             </Switch>
         </Router>
         
