@@ -1,0 +1,75 @@
+.primary-info{
+    text-align: left;
+}
+
+.container{
+    perspective: 1000px;
+}
+.book-cover_area{
+    margin: auto;
+    padding: 30px;
+    display: block;
+    box-sizing: border-box;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+
+.Stats-card-content{
+    height: 140px;
+    width: 540px;
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+   
+}
+
+.front,
+.back{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    border-radius: 20px;
+    position:absolute;
+}
+
+.front{
+    background: linear-gradient(#9e2a06, #2fb0df);
+    z-index: 2;
+    -webkit-backface-visibility: hidden;
+}
+
+.back{
+    background: linear-gradient(#a53e0ed2, #2fb0df);
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.container:hover .Stats-card-content{
+    transform: rotateY(180deg);
+}
+
+
+.summary_box-bg{
+    background: rgb(8, 207, 233);
+    width: 1460px;
+    height: auto;
+    margin: 0% auto;
+}
+
+.summary-div{
+    background: rgb(8, 207, 233);
+    width: 1460px;
+}
+
+.summary-object{
+    color: rgb(8, 5, 5);
+    justify-content: center;
+    font-family:'Times New Roman', Times, serif;
+}
+
