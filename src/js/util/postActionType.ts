@@ -1,0 +1,8 @@
+export enum PostActionType {
+
+    HAS_MORE_DATA_STREAM = 'HAS_MORE_DATA_STREAM',
+    NOT_MORE_DATA_STREAM = 'NOT_MORE_DATA_STREAM',
+    ADD_POST = 'ADD_POST',
+    DELETE_POST = 'DELETE_POST',
+
+}
