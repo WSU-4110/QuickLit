@@ -1,59 +1,44 @@
 import axios from 'axios';
-import {ADD_POST, GET_POST, GET_POSTS, POST_ERROR, } from './types';
+import * as actionTypes from './actionTypes';
 
 // Get Posts
-export const getPosts = () => async (dispatch: (arg0: { type: string; payload: any; }) => void) => {
+
+// Get Post
+/* export const getPost = (id: any) => async (dispatch: (arg0: { type: any; payload: any; }) => void) => {
     try {
         const res = await axios.get('/api/posts');
 
         dispatch({
-            type: GET_POSTS,
-            payload: res.data
-        })
-    } catch (error:any) {
-        dispatch({
-            type: POST_ERROR,
-            payload: { msg: error.response.data.msg, status: error.response.status }
-        })
-    }
-}
-// Get Post
-export const getPost = (id: any) => async (dispatch: (arg0: { type: any; payload: any; }) => void) => {
-    try {
-        const res = await axios.get(`/api/posts/${id}`);
-
-        dispatch({
-            type: GET_POST,
+            type: actionTypes.GET_POSTS,
             payload: res.data
         })
     } catch (error) {
         dispatch({
-            type: POST_ERROR,
+            type: actionTypes.POST_ERROR,
             payload: { msg: error.response.data.msg, status: error.response.status }
         })
+    } */
+
+export function addPost(post: IPost){
+    const action: PostAction = {
+        type: actionTypes.ADD_POST,
+        post,
     }
+      return simulateHttpRequest(action)
 }
 
-// Add Post
-export const addPost = (formData: any) => async (dispatch: (arg0: { type: string; payload: any; }) => void) => {
-    const config = {
-        headers: {
-            'Content-Type': 'application/json'
-        }
+export function removePost(post: IPost) {
+    const action: PostAction = {
+      type: actionTypes.REMOVE_POST,
+      post,
     }
-
-    try {
-        const res = await axios.post(`/api/posts`, formData, config);
-
-        dispatch({
-            type: ADD_POST,
-            payload: res.data
-        });
-
-    } catch (error:any) {
-        dispatch({
-            type: POST_ERROR,
-            payload: { msg: error.response.data.msg, status: error.response.status }
-        })
+    return simulateHttpRequest(action)
+  }
+  
+export function simulateHttpRequest(action: PostAction) {
+    return (dispatch: DispatchType) => {
+      setTimeout(() => {
+        dispatch(action)
+      }, 500)
     }
-}
+  }

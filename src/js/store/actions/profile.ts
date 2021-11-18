@@ -1,5 +1,5 @@
-import axios from 'axios';
-import {CLEAR_PROFILE, GET_PROFILE, GET_PROFILES, PROFILE_ERROR} from './types';
+/* import axios from 'axios';
+import {CLEAR_PROFILE, GET_PROFILE, GET_PROFILES, PROFILE_ERROR} from './actionTypes';
 
 // Get current user's profile
 export const getCurrentProfile = () => async (dispatch: (arg0: { type: string; payload: any; }) => void) => {
@@ -85,3 +85,4 @@ export const createProfile = (formData, history, edit = false) => async dispatch
         });
     }
 }
+ */

@@ -1,6 +1,7 @@
 import React  from 'react';
 //@ts-ignore
 import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
+import PostFeed from '../posts/PostFeed'
 
 require("../../../style/profile/ProfilePage.scss");
 
@@ -20,12 +21,11 @@ export function UserProfile(){
                         <p>Hello everyone! just made my account so feel free to add me as a friend :)</p>
                     </div>
                 </div>
-                <div className="profile-bookshelf">
-                        <Bookshelf/>
+                  <div className="profile-bookshelf">
                 </div>
                 <div className="posts-container">
                     <h1>Recent Posts</h1>
-
+                    <PostFeed/>
                 </div>
             </div>
         </div>

@@ -1,42 +1,48 @@
-import { ADD_POST, GET_POST, GET_POSTS, POST_ERROR } from '../actions/types';
+import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    posts: [],
-    post: null,
+    posts: [
+        {
+            id: 1,
+            title: "post 1 - posts[] state",
+            text:
+              "Quisque cursus, metus vitae pharetra Nam libero tempore, cum soluta nobis est eligendi",
+          },
+          {
+            id: 2,
+            title: "post 2 - posts[] state",
+            text:
+              "Harum quidem rerum facilis est et expedita distinctio quas molestias excepturi sint",
+          },
+    ],
+    post:
+    {
+      id: 3,
+      title: "post 3 - post state",
+      body:
+        "Harum quidem rerum facilis est et expedita distinctio quas molestias excepturi sint",
+    },
     error: {},
     loading: true
 }
 
-export default function (state = initialState, action: { type: any; payload: any; }) {
-    const { type, payload } = action;
-
-    switch (type) {
-        case GET_POSTS:
-            return {
-                ...state,
-                posts: payload,
-                loading: false
+const reducer = (
+    state: PostsState = initialState,
+    action: PostAction
+    ): PostsState => {
+        switch (action.type) {
+          case actionTypes.ADD_POST:
+            const newPost: IPost = {
+              id: Math.random(), // not really unique
+              title: action.post.title,
+              text: action.post.text,
             }
-        case GET_POST:
             return {
-                ...state,
-                post: payload,
-                loading: false
-            }
-        case ADD_POST:
-            return {
-                ...state,
-                // setting 'payload' first will set new posts first in UI
-                posts: [payload, ...state.posts],
-                loading: false
-            }
-        case POST_ERROR:
-            return {
-                ...state,
-                error: payload,
-                loading: false
-            }
-        default:
-            return state;
+              ...state,
+              posts: state.posts.concat(newPost),
+            }              
+        }
+        return state
     }
-}
+      
+export default reducer
