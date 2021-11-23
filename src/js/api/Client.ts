@@ -1,13 +1,15 @@
+import { QuickLitUser } from "../model/QuickLitUser";
 import {isSignedIn, getUser} from "../util/AuthUtility";
 import { NOT_SIGNED_IN_RESPONSE } from "../util/Constants";
 export function authenticatedHttpGet(url: string) {
     
-    const user = getUser();
-    if(!isSignedIn() || !user){
+    const user: QuickLitUser = getUser();
+    if(!user){
         return NOT_SIGNED_IN_RESPONSE;
     }
     const request: Request = new Request(url);
-    request.headers.append("Authorization", user.cognitoTokenID.jwtToken);
+    console.error(`user is ${JSON.stringify(user)}`)
+    request.headers.append("Authorization", user.cognitoTokenJWT);
     
     return fetch(request).then((response)=>{
         const status: number = response.status as number;

@@ -1,64 +1,50 @@
 import { CognitoIdToken } from "amazon-cognito-identity-js";
 import { QuickLitUser } from "../model/QuickLitUser";
 
-export const TOKEN_ID_KEY = "quicklit-tokenid";
-export const ACCESS_ID_KEY = "quicklit-accessid";
 export const QUICKLIT_USER_KEY = "quicklit-user";
 
 
-export const signin = (tokenID: CognitoIdToken, AccessID: CognitoIdToken): void=>{
-    if(isTokenValid(tokenID) && isTokenValid(AccessID)){
-        window.localStorage.setItem(TOKEN_ID_KEY, JSON.stringify(tokenID));
-        window.localStorage.setItem(ACCESS_ID_KEY,  JSON.stringify(AccessID));
+export const signin = (AccessID: CognitoIdToken): void=>{
+    if(isTokenValid(AccessID)){
 
-        const user = extractUserData(tokenID, AccessID);
+        const user = extractUserData(AccessID);
         if(user){
             window.localStorage.setItem(QUICKLIT_USER_KEY, JSON.stringify(user));
         } else{
-            console.error(`Error, can't extract user  from ${tokenID}`)
+            console.error(`Error, can't extract user  from ${AccessID}`)
         }
     } else {
-        console.error(`Error, can't set ${TOKEN_ID_KEY} and ${ACCESS_ID_KEY} to a falsy value`)
+        console.error(`Error, AccessID is a falsy value`);
     }
 }
 
 export const signout = (): void=>{
-    window.localStorage.removeItem(TOKEN_ID_KEY);
-    window.localStorage.removeItem(ACCESS_ID_KEY);
+    window.localStorage.removeItem(QUICKLIT_USER_KEY);
 }
 
 export const isSignedIn = (): boolean=>{
-    const tokenID = window.localStorage.getItem(TOKEN_ID_KEY);
-    const AccessID = window.localStorage.getItem(ACCESS_ID_KEY);
+    const userData = window.localStorage.getItem(QUICKLIT_USER_KEY);
 
-    return tokenID && AccessID? true : false;
+    return userData ? true : false;
 }
 
 export const getUser = ()=>{
-    const tokenIdString = window.localStorage.getItem(TOKEN_ID_KEY);
-    const accessIdString = window.localStorage.getItem(ACCESS_ID_KEY);
+    const userDataString = window.localStorage.getItem(QUICKLIT_USER_KEY);
 
-    if(!tokenIdString || tokenIdString.length <= 0 ||
-        !accessIdString || accessIdString.length <= 0){
+    if(!userDataString || userDataString.length <= 0){
             return;
     }
-    const tokenId = JSON.parse(tokenIdString);
-    const accessId = JSON.parse(accessIdString);
-    return (!isTokenValid(tokenId) || !isTokenValid(accessId))?
-        null : extractUserData(tokenId, accessId);
-
-
+    const userData = JSON.parse(userDataString);
+    return userData;
 }
 const isTokenValid = (token: any): boolean => token.jwtToken.length > 0;
 
-const extractUserData = (tokenId: any, accessid : any): QuickLitUser=>{
+export const extractUserData = (tokenId: CognitoIdToken): QuickLitUser=>{
+
     const user: QuickLitUser = {
-        email: tokenId.email,
-        isEmailVerified: tokenId.email_verified,
-        commonName: tokenId.name,
-        username: tokenId.username,
-        cognitoTokenID: tokenId,
-        cognitoAccessID: accessid
+        commonName: "abe",
+        username: tokenId.payload.username,
+        cognitoTokenJWT: tokenId.getJwtToken()   
     };
     return user;
 }

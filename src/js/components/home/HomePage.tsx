@@ -46,8 +46,8 @@ const fetchPosts = (setPostsHook: any)=>{
     if(!isSignedIn() || !user){
         return NOT_SIGNED_IN_RESPONSE;
     }
-    const request: Request = new Request(API_GATEWAY_ENDPOINT);
-    request.headers.append("Authorization", user.cognitoTokenID.jwtToken);
+    const request: Request = new Request(API_GATEWAY_ENDPOINT+"authenticated/userdata/all/abe");
+    request.headers.append("Authorization", user.cognitoTokenJWT);
     
     const formattedPosts: any = [];
     fetch(request).then((response)=>{
