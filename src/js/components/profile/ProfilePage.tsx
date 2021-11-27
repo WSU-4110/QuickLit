@@ -1,5 +1,6 @@
 //@ts-ignore
 import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
+import Saved from "../books/Saved";
 
 
 require("../../../style/profile/ProfilePage.scss");
@@ -19,6 +20,9 @@ export function UserProfile(){
                     </header>   
                     <div>
                         <p>Hello everyone! just made my account so feel free to add me as a friend :)</p>
+                    </div>
+                    <div>
+                        <Saved/>
                     </div>
                 </div>
             </div>

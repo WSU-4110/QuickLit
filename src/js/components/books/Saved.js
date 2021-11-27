@@ -5,11 +5,13 @@ import SavedList from "./SavedList";
 class Saved extends Component {
 
     state = {
-        savedBooks: []
-    }
+        savedBooks: [],
+        savedBookIDs:["cT5U7IlC_ugC", "gczsCgAAQBAJ","RoLZdHLNQJEC"]
+    }   
 
     componentDidMount = () => {
         this.getBooks()
+        
     }
 
     deleteGoogleBook = currentBook => {
@@ -22,29 +24,42 @@ class Saved extends Component {
             console.log("This is the error", err);
         })
     }
-
-    getBooks = () => {
-        API.getBooks()
+    
+    getBookIDs = () => {
+        console.log("savedBookIDs:",this.state.savedBookIDs)
+        API.getBookshelfIDs()
         .then(res => {
             this.setState({
-                savedBooks: res.data
+                savedBookIDs: res
             })
-            console.log("This is the res from getBooks", res);
+            console.log("This is the res from getBookshelfIDs", res);
         })
         .catch(err => {
             console.log("This is the error", err);
         })
+    }
+    
+    getBooks = () => {
+        //savedBookIDs has an array of book ids. convert to array of volume info
+        this.getBookIDs()
+        for (const [i, bookID] of this.state.savedBookIDs.entries()) {
+            API.googleBooksIDSearch(this.state.savedBookIDs[i])
+            .then(res => {
+                this.state.savedBooks.push(res.data.volumeInfo)
+                console.log("savedBooks[]: ", this.state.savedBooks)           
+            })
+            .catch(err => console.log("error:", err));
+        }
+        
     }
 
 
     render() {
         return (
             <div>
-                <Nav />
-                <Container fluid>
-                <Jumbotron />
                 {this.state.savedBooks.length ? (
-                    <SavedList 
+/*                     <h1>{this.state.savedBooks}</h1>
+ */                    <SavedList 
                     bookState={this.state.savedBooks}
                     deleteGoogleBook={this.deleteGoogleBook}
                     >
@@ -52,7 +67,6 @@ class Saved extends Component {
                 ) : (
                     <h5>No results to display</h5>
                 )}
-                </Container>
             </div>
         )
     }
