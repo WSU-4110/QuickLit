@@ -1,8 +1,6 @@
 // Required module
 import axios from "axios";
 import { API_GATEWAY_ENDPOINT } from "./Constants";
-import { authenticatedHttpGet } from "../api/client"
-
 export default {
     
     googleBooks: function(query) {
