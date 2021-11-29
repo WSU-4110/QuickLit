@@ -6,7 +6,8 @@ import reduxSaga from 'redux-saga';
 
 import Navbar from "./components/navbar/Navbar";
 import HomePage from "./components/home/HomePage";
-import BookPage from "./components/books/search/Books";
+import Books from "./components/books/search/Books";
+import BookPage from "./components/books/BookPage";
 
 import DiscussionPage from "./components/discussion/DiscussionPage";
 import ProfilePage from "./components/profile/ProfilePage";
@@ -34,7 +35,8 @@ const App = () =>{
           <Navbar/>
             <Switch>
               <Route path='/' component={HomePage} exact />
-              <Route path='/book' component={BookPage} exact />
+              <Route path='/book' component={Books} exact />
+              <Route path='/bookpage' component={BookPage} exact />
               <Route path='/discussion' component={DiscussionPage} exact />
               <Route path='/profile' component={ProfilePage} exact />
               <Route path='/auth' component={SignUpAndLoginPage} exact />
