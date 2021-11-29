@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {Input, SubmitBtn} from "./Search"
-import API from "../../util/API";
+import API from "../../../util/API";
 import ResultList from "./ResultList"
-import Saved from "./Saved";
+import Saved from "../bookshelf/Saved";
 class Books extends Component {
 
     state = {
@@ -30,8 +30,8 @@ class Books extends Component {
         event.preventDefault();
         this.searchBooks();
     };
-    saveGoogleBookID = currentBook => {
-        console.log("book being saved:", currentBook.title);
+    saveGoogleBook = currentBook => {
+        console.log("book being saved:", currentBook);
         console.log("that book's id:", currentBook.id);
         API.saveBookID(currentBook.id)
         .then(res => console.log("Successful id POST to DB", res))
@@ -55,7 +55,7 @@ class Books extends Component {
                 {this.state.books.length ? (
                     <ResultList 
                     bookState={this.state.books}
-                    saveGoogleBookID={this.saveGoogleBookID}>
+                    saveGoogleBook={this.saveGoogleBook}>
                     </ResultList>
                 ) : (
                     <div>

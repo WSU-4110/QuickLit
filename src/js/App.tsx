@@ -6,7 +6,7 @@ import reduxSaga from 'redux-saga';
 
 import Navbar from "./components/navbar/Navbar";
 import HomePage from "./components/home/HomePage";
-import BookPage from "./components/books/Books";
+import BookPage from "./components/books/search/Books";
 
 import DiscussionPage from "./components/discussion/DiscussionPage";
 import ProfilePage from "./components/profile/ProfilePage";

@@ -1,6 +1,6 @@
 //@ts-ignore
 import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
-import Saved from "../books/Saved";
+import Saved from "../books/bookshelf/Saved";
 
 
 require("../../../style/profile/ProfilePage.scss");

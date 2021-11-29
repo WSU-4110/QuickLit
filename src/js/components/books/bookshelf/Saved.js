@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import API from '../../util/API';
+import API from '../../../util/API';
 import SavedList from "./SavedList";
 
 class Saved extends Component {
 
     state = {
         savedBooks: [],
-        savedBookIDs:["cT5U7IlC_ugC", "gczsCgAAQBAJ","RoLZdHLNQJEC"]
+        savedBookIDs:[]
     }   
 
     componentDidMount = () => {
@@ -32,7 +32,7 @@ class Saved extends Component {
             this.setState({
                 savedBookIDs: res
             })
-            console.log("This is the res from getBookshelfIDs", res);
+            console.log("getbookids res",res);
         })
         .catch(err => {
             console.log("This is the error", err);
@@ -40,7 +40,6 @@ class Saved extends Component {
     }
     
     getBooks = () => {
-        //savedBookIDs has an array of book ids. convert to array of volume info
         this.getBookIDs()
         for (const [i, bookID] of this.state.savedBookIDs.entries()) {
             API.googleBooksIDSearch(this.state.savedBookIDs[i])
@@ -50,7 +49,7 @@ class Saved extends Component {
             })
             .catch(err => console.log("error:", err));
         }
-        
+       
     }
 
 
