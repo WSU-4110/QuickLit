@@ -1,5 +1,5 @@
 $page-background-color:#e3fcff;
-$secondary-background-color:#001022;
+$secondary-background-color:#f8f8ff;
 $font-color: #fff;
 
 .profile-container{
@@ -11,15 +11,18 @@ $font-color: #fff;
 
 }
 .profile-hero{
-    //background-color:$secondary-background-color;
+    background-color:$secondary-background-color;
     height:80%;
     width:60%;
     padding: 24px 24px;
     display: flex;
     border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     img{
+        border-radius: 75px;
         height:250px;
+        width: 250px;
         padding:4%;
     }
-    
 }
+
