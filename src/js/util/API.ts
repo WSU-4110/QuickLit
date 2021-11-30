@@ -19,7 +19,7 @@ export default {
     },
     
     saveBookID: function(id: any) {
-        return authenticatedHttpPost(API_GATEWAY_ENDPOINT + "/authenticated/bookshelf/add/" + id)
+        return authenticatedHttpPost(API_GATEWAY_ENDPOINT + "/authenticated/bookshelf/add/" + id, "")
     },
 
     getBookshelfIDs: function() {
