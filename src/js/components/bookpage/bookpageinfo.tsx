@@ -80,6 +80,7 @@ export default function bookpageinfo() {
             </div>
 
 
+<<<<<<< Updated upstream
             <div className="book-info_area">
                 <div className="book-cover_area">
                     
@@ -89,6 +90,9 @@ export default function bookpageinfo() {
                     <h1 className="Book-Title">Title:</h1>
                     <h2 className="Book_Genre">Genre:</h2>
                 </div>
+=======
+            
+>>>>>>> Stashed changes
 
                 <div className="container">
                     <div className="Stats-card-content">
@@ -155,6 +159,7 @@ export default function bookpageinfo() {
             </div>
 
 
+<<<<<<< Updated upstream
 
             {/* 
             <div className="Bookshelf_logger">
@@ -171,6 +176,8 @@ export default function bookpageinfo() {
                 <br></br>
                 <button className="remove">Remove from Bookshelf</button>
             </div>
+=======
+>>>>>>> Stashed changes
         */}
 
         </>

@@ -119,16 +119,26 @@ hr{
 
 .primary_info_container > *{
     font-family: Anton;
+<<<<<<< Updated upstream
     font-size: 50px;
+=======
+    font-size: 36px;
+>>>>>>> Stashed changes
     
 }
 
 .title_container{
+<<<<<<< Updated upstream
     padding:0px;
+=======
+    padding-bottom: 5px;
+    padding-left: 0px;
+>>>>>>> Stashed changes
    
 }
 .author_container{
     
+<<<<<<< Updated upstream
     padding: 5px;
 
 }
@@ -139,6 +149,29 @@ hr{
 .description_container{
     margin:5px;
     padding:5px;
+=======
+    padding-left: 0px;
+    padding-bottom: 5px;
+
+}
+.page_count{
+    padding-left: 0px;
+    padding-bottom: 5px;
+}
+.publish_info_container{
+    padding-left: 0px;
+    padding-bottom: 5px;
+}
+.description_container{
+    padding-left: 0px;
+    padding-bottom: 5px;
+}
+
+p{
+    margin: 10px;
+    padding-left: 0px;
+    padding-bottom: 5px;
+>>>>>>> Stashed changes
 }
 
 
