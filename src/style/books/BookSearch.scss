@@ -1,36 +1,45 @@
-$page-background-color:#e3fcff;
+$page-black:#001022;
+
 .search-container{
-    background:$page-background-color;
+    background:$page-black;
     display: flex;
     flex-direction:column;
     padding: 3%;
-    height:1000px;
+    height: 12.6rem;
 }
 
 .searchbar{
     display: flex;
     flex-direction: column;
-    padding:40px;
+    align-items: center;
+    width: 100%;
     form {
-        width: 500px;
-        margin: 0 auto;
-        padding: 20px 0px 20px 140px;
+        width: 0;
+        height: 0;
     }
     button {
-        display: inline;
-        background: #343a40;
-        color: #fff;
-        border: none;
-        padding: 8px 13px 10px 13px;
-        margin: 0 15px 0 0;
-        position: relative;
-        top: -2px;
+        background-color: #fff;
+        padding: 1.3rem;
+        margin-left: 30.4rem;
+        margin-top: 5.5rem;
+        z-index: 10;
+        border:#ffffff;
+        cursor:pointer;
+        img{
+            height:2rem;
+            z-index: 10;
+        } 
     }
     input {
-        width: 150px;
-    padding: 5px;
-    font-size: 1em;
-
+        outline: none;
+        background-color: #fff;
+        width: 35rem;
+        height: 5rem;
+        margin-top:6rem;
+        position: absolute;
+        font-size: x-large;
+        font-family: "SFProRegular";
+        
     }
 }
 

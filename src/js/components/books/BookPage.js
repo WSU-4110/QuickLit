@@ -23,8 +23,8 @@ export default function BookPage() {
     return(
         <div className="profile-container">
         <div className="profile-hero">
-             <img src={book.imageLinks.small} alt="book pic"/>
-             <div className="details-container">
+{/*              <img src={book.imageLinks.small} alt="book pic"/>
+ */}             <div className="details-container">
                 <header>
                     <h1>{isLoading? "loading": book.authors}</h1>
                 </header>   

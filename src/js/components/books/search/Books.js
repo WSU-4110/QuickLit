@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import {Input, SubmitBtn} from "./Search"
 import API from "../../../util/API";
 import ResultList from "./ResultList"
-import Saved from "../bookshelf/Saved";
+import searchicon from "../../../../assets/icons/searchicon.png"
+require("../../../../style/books/BookSearch.scss");
+
 class Books extends Component {
 
     state = {
@@ -40,30 +42,32 @@ class Books extends Component {
     
     render() {
         return (
-            <div>
+            <><div className="search-container">
+                <div className="searchbar">
                 <form>
-                    <h5>Search for books</h5>
-                    <Input 
+                    <input
                         value={this.state.search}
                         onChange={this.handleInputChange}
                         name="search"
-                        placeholder="e.g. Harry Potter"
-                    />
-                    <SubmitBtn onClick={this.handleFormSubmit}/>
+                        placeholder="Search" 
+                        autocomplete="off"/>
+                        <button onClick={this.handleFormSubmit}><img src={searchicon}/></button>
                 </form>
-                gi
-                {this.state.books.length ? (
-                    <ResultList 
-                    bookState={this.state.books}
-                    saveGoogleBook={this.saveGoogleBook}>
-                    </ResultList>
-                ) : (
-                    <div>
-                        <hr/>
-                    <p style={{fontStyle: "italic"}}>No results to display</p>
-                    </div>
-                )}
+                </div>
             </div>
+            
+            
+            <div>
+                <list>
+                    {this.state.books.length ? (
+                        <ResultList
+                            bookState={this.state.books}
+                            saveGoogleBook={this.saveGoogleBook}>
+                        </ResultList>
+                    ) : (<></>)}
+                </list>
+            </div>
+            </>
         )
     }
 }

@@ -24,7 +24,7 @@ export default {
         return authenticatedHttpGet(API_GATEWAY_ENDPOINT + "/authenticated/bookshelf")
      },
 
-    deleteBook: function(id) {
+    deleteBook: function(id: any) {
         return axios.delete("/api/books/" + id);
     }
 };  

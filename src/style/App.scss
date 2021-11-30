@@ -4,10 +4,14 @@
     font-family: "TisaSansPro";
     src: url(../assets/fonts/TisaSansPro.woff) format('woff');
   }
-  @font-face {
+@font-face {
     font-family: "TisaSansProBoldItalic";
     src: url(../assets/fonts/TisaSansPro-BoldItalic.woff) format('woff');
-  }
+}
+@font-face {
+    font-family: "SFProRegular";
+    src: url(../assets/fonts/SFProDisplay-Regular.woff) format('woff');
+}
 $font-style: "Poppins", sans-serif;
 :root {
     font-family: "Poppins", sans-seri;
