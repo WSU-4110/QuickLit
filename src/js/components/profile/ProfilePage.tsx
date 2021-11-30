@@ -1,6 +1,5 @@
-//@ts-ignore
 import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
-import React, {useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import { BACKEND_BASE_URL } from "../../util/Constants";
 import {isSignedIn, getUser} from "../../util/AuthUtility"
 import { authenticatedHttpGet } from "../../api/Client";

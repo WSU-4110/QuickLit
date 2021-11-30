@@ -1,7 +1,5 @@
 import React  from 'react';
-//@ts-ignore
 import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
-//@ts-ignore
 require("../../../style/discussion/createpost.scss");
 export class CreatePost extends React.Component {
     render(){

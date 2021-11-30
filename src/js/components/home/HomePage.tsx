@@ -3,15 +3,10 @@ import { BACKEND_BASE_URL } from "../../util/Constants";
 import { authenticatedHttpGet } from "../../api/Client"
 import CreatePost from "../common/CreatePost"
 
-//@ts-ignore
 import Avatar0 from "../../../assets/images/YellowGlasses.png";
-//@ts-ignore
 import Avatar1 from "../../../assets/images/DefaultUserPic.jpeg"
-//@ts-ignore
 import Avatar2 from "../../../assets/images/GirlBrownHair.png"
-//@ts-ignore
 import Avatar3 from "../../../assets/images/ManBaldSunglasses.png"
-//@ts-ignore
 import Avatar4 from "../../../assets/images/WomanShortHairDefault.png"
 import { getUser } from "../../util/AuthUtility";
 

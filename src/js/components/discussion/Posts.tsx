@@ -1,9 +1,6 @@
 import React  from 'react';
-//@ts-ignore
 import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
-//@ts-ignore
 import testBookCover from "../../../assets/images/testbookcover.jpeg";
-//@ts-ignore
 require("../../../style/discussion/post.scss");
 export class Posts extends React.Component {
     render(){
