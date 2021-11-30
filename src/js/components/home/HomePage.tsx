@@ -33,7 +33,6 @@ type PostList = Post[];
 interface RequestState {
     isLoading: boolean;
     isError: boolean;
-    isSuccess: boolean;
 }
 
 const avatarArray = [Avatar0, Avatar1, Avatar2, Avatar3, Avatar4];
@@ -41,12 +40,16 @@ const avatarArray = [Avatar0, Avatar1, Avatar2, Avatar3, Avatar4];
 
 export default function Home() {
     const [posts, setPosts] = useState<PostList>([]);
-
+    const [requestState, setRequestState] = useState<RequestState>({
+        isLoading: true,
+        isError: false
+    });
     useEffect(() => {
-        fetchpostsForHomePage(setPosts);
+        fetchpostsForHomePage(setPosts, setRequestState);
     }, []);
 
-    return (
+    return ( requestState.isLoading? <div>loading</div>:
+            requestState.isError? <div>Error</div>:
         <div className="all-posts-wrapper">
             <CreatePost />
             {
@@ -75,9 +78,23 @@ export default function Home() {
     );
 }
 
-async function fetchpostsForHomePage(setPostsHook: (posts: Post[]) => void) {
+async function fetchpostsForHomePage(setPostsHook: (posts: Post[]) => void, setRequestStateHook: (RequestState: RequestState) => void) {
     const user = getUser();
-    const responseJson = await authenticatedHttpGet(`${BACKEND_BASE_URL}/authenticated/post/get/${user.username}`);
-
-    setPostsHook(responseJson);
+    authenticatedHttpGet(`${BACKEND_BASE_URL}/authenticated/post/get/${user.username}`).then( responseJson =>{
+    
+        if(responseJson || Array.isArray(responseJson)){
+            setPostsHook(responseJson);
+            
+            setRequestStateHook({
+                isLoading: false,
+                isError: false
+            })
+        }else{
+            setRequestStateHook({
+                isLoading: false,
+                isError: true
+            })
+        }
+    });
+    
 }

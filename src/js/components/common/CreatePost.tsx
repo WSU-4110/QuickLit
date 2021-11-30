@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { getUser, isSignedIn } from "../../util/AuthUtility";
-import { BACKEND_BASE_URL, NOT_SIGNED_IN_RESPONSE } from "../../util/Constants";
-// import { authenticatedHttpPost } from "../../api/Client"
+import { BACKEND_BASE_URL } from "../../util/Constants";
+import { authenticatedHttpPost } from "../../api/Client"
 
 interface Post {
     postBody: string;
@@ -15,7 +15,7 @@ interface RequestState {
 }
 
 const CreatePost: any = () => {
-    const [postState, SetPost] = React.useState<Post>({
+    const [postState, SetPostState] = React.useState<Post>({
         postBody: '',
         bookID: ''
     })
@@ -26,20 +26,18 @@ const CreatePost: any = () => {
         isSuccess: false
     })
 
-    const handleChange: any = (e: any) => {
-        SetPost({
+    const handleChange: any = (event: any) => {
+        SetPostState({
             ...postState,
-            [e.target.name]: e.target.value
+            [event.target.name]: event.target.value
         })
     }
 
     const handleSubmit: any = (e: any) => {
         e.preventDefault();
         if (postState.postBody.trim()) {
-            // authenticatedHttpPost(API_GATEWAY_ENDPOINT + '/authenticated/post', postState);
-        }
-        else {
-            alert('Must enter text to the post before publishing.')
+            // authenticatedHttpPost(BACKEND_BASE_URL + '/authenticated/post', postState);
+            authenticatedHttpPost('http://localhost:4000/authenticated/post', postState);
         }
     }
 
@@ -57,7 +55,8 @@ const CreatePost: any = () => {
                         value={postState.postBody}
                         className="post-body-input"
                         onChange={handleChange}
-                    //required
+                        maxLength={1024}
+                        required
                     />
                 </div>
                 <div className="create-post-book-container">

@@ -1,14 +1,11 @@
+import axios from 'axios';
 import { QuickLitUser } from "../model/QuickLitUser";
 import {isSignedIn, getUser} from "../util/AuthUtility";
 import { NOT_SIGNED_IN_RESPONSE } from "../util/Constants";
 export function authenticatedHttpGet(url: string) {
     
     const user: QuickLitUser = getUser();
-    if(!user){
-        return NOT_SIGNED_IN_RESPONSE;
-    }
     const request: Request = new Request(url);
-    console.error(`user is ${JSON.stringify(user)}`)
     request.headers.append("Authorization", user.cognitoTokenJWT);
     
     return fetch(request).then((response)=>{
@@ -22,4 +19,16 @@ export function authenticatedHttpGet(url: string) {
     }).catch((error) =>{
         console.error(error);
     })
+}
+
+export async function authenticatedHttpPost(url: string, body: any) {
+    
+    const user: QuickLitUser = getUser();
+    const response = await axios.post(url, body,
+    {
+      headers: {
+        Authorization: user.cognitoTokenJWT
+      }
+    });
+    return response;
   }
