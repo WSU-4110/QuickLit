@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Russo+One&display=swap');
+/*Book Page format overview for standard page element containers - START*/
+
+.bpd_container{
+    background-color: white;
+    width:100%;
+    padding: 0px;
+}
+
+.item{
+    font-size: 1.5rem;
+    line-height: 1;
+    text-align: center;
+    padding: 3rem 1rem;
+    
+    background: #2fb0df;
+    border: 6px solid rgb(10, 80, 230);
+    color: rgb(25, 54, 50);
+    
+    margin: 7px;
+
+}
+
+.body_container{
+    display: flex;
+    height: 200vh;
+}
+
+.main_content{
+    color:#141014;
+    order:3;
+    flex:4;
+}
+
+.sidebar_left{
+    order: 1;
+    flex: 1;
+    
+}
+
+.review_section{
+    height: 500px;
+}
+
+hr{
+    color:#141014;
+    
+}
+
+/*Book Page format overview for standard page element containers - END*/
+
+/*======================================================================================================*/
+/*Book Page format for Left sidebar - START*/
+.book_container{
+    display: flex;
+    height: 370px;
+    width: 300px;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    margin: 10px;
+    padding-top:60px;
+    padding-bottom: 60px;
+    
+
+}
+.button_container{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    
+
+}
+
+.bookshelf-add{
+    border-radius: 20px;
+    font-size: 1.75rem;
+    font-family: Anton;
+    padding: 0.25em 1em;
+    background-color: green;
+
+}
+
+.bookshelf-add:hover{
+    background-color: #4ad138;
+}
+
+.bookshelf-remove{
+    border-radius: 20px;
+    font-size: 1.75rem;
+    font-family: Anton;
+    padding: 0.25em 0.9em;
+    background-color: red;
+}
+
+.bookshelf-remove:hover
+{
+    background-color: rgb(240, 80, 6);
+}
+/*Book Page format for Left sidebar - END*/
+
+/*======================================================================================================*/
+
+/*Book Page format for Main Content - START*/
+.primary_info_container{
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    padding: 0px;
+
+    hr{
+        border: 4px solid black;
+        width: 97%;
+        padding: 0px;
+        margin:0px;
+    }
+}
+
+.primary_info_container > *{
+    font-family: Anton;
+    font-size: 50px;
+    
+}
+
+.title_container{
+    padding:0px;
+   
+}
+.author_container{
+    
+    padding: 5px;
+
+}
+.publish_info_container{
+    margin:5px;
+    padding:5px;
+}
+.description_container{
+    margin:5px;
+    padding:5px;
+}
+
+
+
+/*Book Page format for Main Content - END*/
+
+
+/*======================================================================================================*/
+
+/*
+.primary-info{
+    text-align: left;
+}
+
+.container{
+    perspective: 1000px;
+}
+.book-cover_area{
+    margin: auto;
+    padding: 30px;
+    display: block;
+    box-sizing: border-box;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+
+.Stats-card-content{
+    height: 140px;
+    width: 540px;
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+   
+}
+
+.front,
+.back{
+
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    border-radius: 20px;
+    position:absolute;
+}
+
+.front{
+    background: linear-gradient(#9e2a06, #2fb0df);
+    z-index: 2;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.back{
+    background: linear-gradient(#a53e0ed2, #2fb0df);
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.container:hover .Stats-card-content{
+    transform: rotateY(180deg);
+}
+
+
+.summary_box-bg{
+    background: rgb(8, 207, 233);
+    width: 1460px;
+    height: auto;
+    margin: 0% auto;
+    padding: 20px;
+}
+
+.summary-div{
+    background: rgb(8, 207, 233);
+    padding: 50px;
+    width: 1460px;
+}
+
+.summary-object{
+    color: rgb(8, 5, 5);
+    justify-content: center;
+    font-family:'Times New Roman', Times, serif;
+}
+
+*/

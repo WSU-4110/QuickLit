@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getUser, isSignedIn } from "../../util/AuthUtility";
 import { API_GATEWAY_ENDPOINT, NOT_SIGNED_IN_RESPONSE } from "../../util/Constants";
+import  BookPageInfo  from "../bookpage/bookpageinfo";
 //@ts-ignore
 import profilePic from "../../../assets/images/YellowGlasses.png";
 require("../../../style/homePage/homePage.scss");
@@ -18,25 +19,7 @@ export function Home() {
 
     return(
     <div className="all-posts-wrapper">
-        {
-            posts.map( post =>{
-                    return (
-                    <div className="post-container">
-                        <img src={profilePic}></img>
-                        <div className="body-content">
-                        <div className="post-author">
-                            {post.author}
-                        </div>
-                        <div className="post-body">
-                            {post.body}
-                        </div>
-                        </div>
-                            
-                    </div>
-                    );
-                }
-            )
-        }
+        <BookPageInfo/>
     </div>
     );
 }
