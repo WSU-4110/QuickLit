@@ -1,4 +1,4 @@
-import { Component, useState, useEffect} from "react";
+import { useState, useEffect} from "react";
 import { useLocation } from "react-router-dom"
 import API from "../../util/API"
 
@@ -30,7 +30,7 @@ export default function BookPage() {
         fetchBookData(bookId, setBook, setIsLoading);
     },[]);
 
-    return( isLoading? "loading":
+    return( isLoading? <div>"loading"</div>:
             !book? <div>Book not found</div>:
         <div className="profile-container">
             <div className="profile-hero">
