@@ -57,8 +57,8 @@ class Books extends Component {
             </div>
             
             
-            <div>
-                <list>
+            <div className="results-container">
+                <list className= "book-results">
                     {this.state.books.length ? (
                         <ResultList
                             bookState={this.state.books}

@@ -43,45 +43,65 @@ $page-black:#001022;
     }
 }
 
-.list{
+.book-results{
     display: grid;
-    margin: 20px 0 50px 0;
+    margin: 0px 10px 50px 10px;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 1fr;
     grid-gap: 1em;
 }
-.card-container{
-    width: 250px;
-    border: 3px solid rgba(0,0,0,.325);
+.card{
+    width: 20rem;
     margin: 0 auto;
     border-radius: 5px;
     overflow: hidden;
-    .desc {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    .card-header {
         height: 130px;
         padding: 10px;
     }
 
-    .desc h2 {
+    h2 {
         font-size: 1em;    
         font-weight: 400;
     }
-    .desc h3, p {
+    h3, p {
         font-weight: 300;
     }
 
-    .desc h3 {
+    h3 {
         color: #6c757d;
         font-size: 1em;
         padding: 10px 0 10px 0;
     }
-
-    .desc p {
+    p {
         color: #6c757d;
     }
 
     img {
-        width: 100%;
-        height: 250px;
+       min-width: 50%;
+       min-height: 85%;
+       
+    }
+    Link{
+        color:#fff;
+    }
+    .view-book{
+        font-style:"TisaSansPro"
+    }
+    h4{
+        color:#001022;
+        text-decoration: none;
+        font-style:"TisaSansPro";
+    }
+    .btn{
+        text-align: center;
+        height:2rem;
+        width:8.59rem;
+        font-family: "TisaSansPro";
+        font-size:small;
     }
 
 }

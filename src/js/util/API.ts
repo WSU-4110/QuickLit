@@ -8,7 +8,10 @@ import { getUser } from "./AuthUtility";
 export default {
     
     googleBooks: function(query: any) {
-        return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
+       return axios.get('https://www.googleapis.com/books/v1/volumes', {
+        params:
+            { q: query, maxResults: 24 }
+        })
     },
 
     googleBooksIDSearch: function(id: any) {
