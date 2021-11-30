@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ResultListItem from "./ResultListItem";
 
-class ResultList extends Component {
+class ResultList extends Component{
 
 
     render() {

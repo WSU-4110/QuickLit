@@ -16,25 +16,15 @@ export default {
     },
     
     saveBookID: function(id: any) {
-        const user: QuickLitUser = getUser();
         return authenticatedHttpPost(API_GATEWAY_ENDPOINT + "/authenticated/bookshelf/add/" + id)
-
-/*         return authenticatedHttpPost(API_GATEWAY_ENDPOINT + "/" + user.cognitoTokenJWT + "/bookshelf/add/" + id)
- */    
-},
+    },
 
     getBookshelfIDs: function() {
         const user: QuickLitUser = getUser();
         return authenticatedHttpGet(API_GATEWAY_ENDPOINT + "/authenticated/bookshelf")
-
-/*         return authenticatedHttpGet(API_GATEWAY_ENDPOINT + "/" + user.cognitoTokenJWT + "/bookshelf")
- */    },
+     },
 
     deleteBook: function(id) {
         return axios.delete("/api/books/" + id);
     }
-
-    /*     saveBookIDOG: function(id) {
-        return axios.post(BASE_URL + "/bookshelf/add/" + id);
-    }, */
 };  
