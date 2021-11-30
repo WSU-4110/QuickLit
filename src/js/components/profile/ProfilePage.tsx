@@ -41,15 +41,15 @@ export default function UserProfile(this: any){
                 <br/>
                 <div className="details-container">
                     <div>
-                        <h3>{profile.name}</h3>
-                        <h4>{(profile.username)}</h4>
+                        <h3>{profile?.name}</h3>
+                        <h4>{(profile?.username)}</h4>
                     </div>   
                     <p>{profile.bio}</p>
-                    <p>currently reading: {profile.currentlyReading}</p>
+                    <p>currently reading: {profile?.currentlyReading}</p>
                 </div>
                 <div className="bookshelf-container">
                     <div>My Bookshelf</div>
-                    { profile.bookShelf.map( book => <div className="bookshelf-item" key={book}>{book}</div>) }   
+                    { profile?.bookShelf?.map( book => <div className="bookshelf-item" key={book}>{book}</div>) }   
                 </div>
             </div>  
         </div>            
