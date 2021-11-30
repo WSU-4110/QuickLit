@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getUser, isSignedIn } from "../../util/AuthUtility";
-import { API_GATEWAY_ENDPOINT, NOT_SIGNED_IN_RESPONSE } from "../../util/Constants";
+import { BACKEND_BASE_URL, NOT_SIGNED_IN_RESPONSE } from "../../util/Constants";
 //@ts-ignore
 import profilePic from "../../../assets/images/YellowGlasses.png";
 require("../../../style/homePage/homePage.scss");
@@ -46,7 +46,7 @@ const fetchPosts = (setPostsHook: any)=>{
     if(!isSignedIn() || !user){
         return NOT_SIGNED_IN_RESPONSE;
     }
-    const request: Request = new Request(API_GATEWAY_ENDPOINT+"authenticated/userdata/all/abe");
+    const request: Request = new Request(BACKEND_BASE_URL+"authenticated/userdata/all/abe");
     request.headers.append("Authorization", user.cognitoTokenJWT);
     
     const formattedPosts: any = [];
