@@ -29,6 +29,9 @@ export default function bookpageinfo() {
                                 Title
                             </div>
                             <hr />
+                            <div> </div>
+                            <div> </div>
+                            <div> </div>
                             {/*Add Info here*/}
                             <div className="item author_container">
                                 Author(s)
@@ -68,6 +71,7 @@ export default function bookpageinfo() {
                 </div>
                 <div className="item review_section">
                     Post your reviews about this book!
+                    
                 </div>
 
                 <footer className="item">
@@ -80,19 +84,7 @@ export default function bookpageinfo() {
             </div>
 
 
-<<<<<<< Updated upstream
-            <div className="book-info_area">
-                <div className="book-cover_area">
-                    
-                </div>
-
-                <div className="primary-info">
-                    <h1 className="Book-Title">Title:</h1>
-                    <h2 className="Book_Genre">Genre:</h2>
-                </div>
-=======
             
->>>>>>> Stashed changes
 
                 <div className="container">
                     <div className="Stats-card-content">
@@ -159,25 +151,6 @@ export default function bookpageinfo() {
             </div>
 
 
-<<<<<<< Updated upstream
-
-            {/* 
-            <div className="Bookshelf_logger">
-                <div className="BS-btns">
-                    
-                    <div></div>
-                    
-                </div>
-            </div>
-            
-            <br></br>
-            <div className="bookshelf_buttons">
-                <button className="add">Add to Bookshelf</button>
-                <br></br>
-                <button className="remove">Remove from Bookshelf</button>
-            </div>
-=======
->>>>>>> Stashed changes
         */}
 
         </>
