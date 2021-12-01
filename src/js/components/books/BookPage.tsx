@@ -1,7 +1,8 @@
 import { useState, useEffect} from "react";
-import { useLocation } from "react-router-dom"
-import API from "../../util/API"
+import { useLocation } from "react-router-dom";
+import API from "../../util/API";
 
+require("../../../style/books/BookPage.scss");
 interface Book {
     title: string;
     subtitle: string;
@@ -34,9 +35,11 @@ export default function BookPage() {
             !book? <div>Book not found</div>:
         <div className="profile-container">
             <div className="profile-hero">
-                <img src={book.imageLinks.thumbnail} alt="book pic"/>
+                <div className="img-and-titl">
+                    <img src={book.imageLinks.thumbnail} alt="book pic"/>
+                    <h1 className="title"> {book.title}</h1>  
+                </div>
                 <div className="details-container">
-                    <h1> {book.title}</h1>  
                     <h2> {book.subtitle}</h2>  
 
                     <h3> By: {book.authors[0]}</h3>  
@@ -44,11 +47,11 @@ export default function BookPage() {
                     <h4> Publishing date: {book.publishedDate}</h4>  
                     <h4> Page count: {book.pageCount}</h4>  
                     <h4> language: {book.language}</h4>  
-
-                    <p dangerouslySetInnerHTML={{__html: book.description}} ></p>  
-
-
                 </div>
+                <p dangerouslySetInnerHTML={{__html: book.description}} className="discription"></p>  
+
+
+                
             </div>
         </div>
     )

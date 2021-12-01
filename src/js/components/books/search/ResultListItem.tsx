@@ -54,15 +54,17 @@ export default function ResultListItem(props: Props){
     }
 
     return (
-
         <div>
-            <div className="card">
-                <div className="card-header"></div>
+            <div className="search-result-item">
                 <div className="card-body">
                     <img src={props.image} style={{maxWidth: "100px"}} alt="book"/>
                     <h5 className="card-title" style={{margin: "10px 0"}}>{props.title}</h5>
-                    <p className="card-text" >{props.description}</p>
-                    <p style={{fontStyle: "italic"}}>Author(s): {props.authors}</p>
+                    <p className="card-text" >
+                            {
+                                props.description? props.description.substring(0,100) + "..." : "This book has no discription"
+                            }
+                    </p>
+                    <p className="card-author">Author(s): <div className="card-author-name">{props.authors}</div></p>
                     <Link
                         to={{
                             pathname: "/bookpage",

@@ -1,0 +1,126 @@
+$page-black:#001022;
+
+.search-container{
+    background:$page-black;
+    display: flex;
+    flex-direction:column;
+    padding: 3%;
+    height: 12.6rem;
+}
+
+.searchbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    form {
+        width: 0;
+        height: 0;
+    }
+    button {
+        background-color: #fff;
+        padding: 1.3rem;
+        margin-left: 30.4rem;
+        margin-top: 5.5rem;
+        z-index: 10;
+        border:#ffffff;
+        cursor:pointer;
+        img{
+            height:2rem;
+            z-index: 10;
+        } 
+    }
+    input {
+        outline: none;
+        background-color: #fff;
+        width: 35rem;
+        height: 5rem;
+        margin-top:6rem;
+        position: absolute;
+        font-size: x-large;
+        font-family: "SFProRegular";
+        
+    }
+}
+
+.book-results{
+    display: grid;
+    margin: 0px 10px 50px 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 1em;
+}
+.search-result-item{
+    width: 20rem;
+    padding: 1rem;
+    margin: 2.4rem;
+    border-radius: 20px;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    flex: 1 0 21%;
+    align-items: center;
+    // background-color: #6c757d;
+
+    .card-text{
+        font-size: 0.8rem;    
+        text-decoration: none !important;
+
+    }
+
+    .card-author{
+        font-size: 0.8rem;    
+
+        .card-author-name{
+            font-style: italic;
+        }
+    }
+    h2 {
+        font-size: 1em;    
+        font-weight: 400;
+    }
+    h3, p {
+        font-weight: 300;
+    }
+
+    h3 {
+        color: #6c757d;
+        font-size: 1em;
+        padding: 10px 0 10px 0;
+    }
+    p {
+        color: #6c757d;
+    }
+
+    img {
+       min-width: 50%;
+       min-height: 85%;
+       
+    }
+    Link{
+        text-decoration: none !important;
+    }
+    .view-book{
+        font-style:"TisaSansPro"
+    }
+    h4{
+        color:#001022;
+        text-decoration: none;
+        font-style:"TisaSansPro";
+    }
+    .btn{
+        text-align: center;
+        height:2rem;
+        width:8.59rem;
+        font-family: "TisaSansPro";
+        font-size:small;
+    }
+
+}
+.search-results-container {
+    max-width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: stretch;
+    align-content: space-around;
+}
