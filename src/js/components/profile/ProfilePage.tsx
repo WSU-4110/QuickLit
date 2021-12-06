@@ -39,17 +39,16 @@ export default function UserProfile(this: any){
         <div className="profile-container">  
             <div className="profile-hero">
                 <div className="details-container">
-                    <img src={DefaultUserPic} alt="profile picture"/>
-                    <div className="details">
-                        <h3>{profile.name}</h3>
-                        <h4 className="username">{(profile.username)}</h4>
-                        <h4>{profile.bio}</h4>
-                        <h4>currently reading: {profile.currentlyReading}</h4>
+                    <div>
+                        <h3>{profile?.name}</h3>
+                        <h4>{(profile?.username)}</h4>
                     </div>   
+                    <p>{profile.bio}</p>
+                    <p>currently reading: {profile?.currentlyReading}</p>
                 </div>
                 <div className="bookshelf-container">
                     <div>My Bookshelf</div>
-                    { profile.bookShelf.map( book => <div className="bookshelf-item" key={book}> - {book}</div>) }   
+                    { profile?.bookShelf?.map( book => <div className="bookshelf-item" key={book}>{book}</div>) }   
                 </div>
             </div>  
         </div>            
