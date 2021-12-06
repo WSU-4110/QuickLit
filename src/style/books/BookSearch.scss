@@ -86,7 +86,11 @@ $page-black:#001022;
        
     }
     Link{
+<<<<<<< HEAD
         color:#fff;
+=======
+        text-decoration: none !important;
+>>>>>>> origin
     }
     .view-book{
         font-style:"TisaSansPro"
@@ -104,4 +108,14 @@ $page-black:#001022;
         font-size:small;
     }
 
+<<<<<<< HEAD
+=======
+}
+.search-results-container {
+    max-width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: stretch;
+    align-content: space-around;
+>>>>>>> origin
 }

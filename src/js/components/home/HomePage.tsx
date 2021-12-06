@@ -51,7 +51,7 @@ export default function Home() {
                 posts.map(post => {
                     return (
                         <div className="post-container">
-                            <img src={avatarArray[Math.floor(Math.random() * 5)]} />
+                            <img src={avatarArray[3]} />
                             <div className="body-content">
                                 <div className="post-author">
                                     {post.author}

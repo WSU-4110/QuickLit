@@ -1,4 +1,5 @@
-import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
+import DefaultUserPic from "../../../assets/images/ManBaldSunglasses.png"
+
 import {useEffect, useState } from "react";
 import { BACKEND_BASE_URL } from "../../util/Constants";
 import {isSignedIn, getUser} from "../../util/AuthUtility"
@@ -37,19 +38,17 @@ export default function UserProfile(this: any){
     return (!isSignedIn()? <div>You are not signed in</div> : 
         <div className="profile-container">  
             <div className="profile-hero">
-                <img src={DefaultUserPic} alt="profile picture"/>
-                <br/>
                 <div className="details-container">
                     <div>
-                        <h3>{profile.name}</h3>
-                        <h4>{(profile.username)}</h4>
+                        <h3>{profile?.name}</h3>
+                        <h4>{(profile?.username)}</h4>
                     </div>   
                     <p>{profile.bio}</p>
-                    <p>currently reading: {profile.currentlyReading}</p>
+                    <p>currently reading: {profile?.currentlyReading}</p>
                 </div>
                 <div className="bookshelf-container">
                     <div>My Bookshelf</div>
-                    { profile.bookShelf.map( book => <div className="bookshelf-item" key={book}>{book}</div>) }   
+                    { profile?.bookShelf?.map( book => <div className="bookshelf-item" key={book}>{book}</div>) }   
                 </div>
             </div>  
         </div>            

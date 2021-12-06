@@ -1,9 +1,6 @@
-// Required module
 import axios from "axios";
 import { authenticatedHttpGet, authenticatedHttpPost } from "../api/Client";
 import { BACKEND_BASE_URL } from "./Constants";
-import { QuickLitUser } from "../model/QuickLitUser";
-import { getUser } from "./AuthUtility";
 
 export default {
     
@@ -19,12 +16,11 @@ export default {
     },
     
     saveBookID: function(id: any) {
-        return authenticatedHttpPost(API_GATEWAY_ENDPOINT + "/authenticated/bookshelf/add/" + id, "")
+        return authenticatedHttpPost(`${BACKEND_BASE_URL}/authenticated/bookshelf/add/" ${id}`, {})
     },
 
     getBookshelfIDs: function() {
-        const user: QuickLitUser = getUser();
-        return authenticatedHttpGet(API_GATEWAY_ENDPOINT + "/authenticated/bookshelf")
+        return authenticatedHttpGet(`${BACKEND_BASE_URL}/authenticated/bookshelf`);
      },
 
     deleteBook: function(id: any) {

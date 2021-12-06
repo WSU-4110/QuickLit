@@ -36,8 +36,7 @@ const CreatePost: any = () => {
     const handleSubmit: any = (e: any) => {
         e.preventDefault();
         if (postState.postBody.trim()) {
-            // authenticatedHttpPost(BACKEND_BASE_URL + '/authenticated/post', postState);
-            authenticatedHttpPost('http://localhost:4000/authenticated/post', postState);
+            authenticatedHttpPost(BACKEND_BASE_URL + '/authenticated/post', postState);
         }
     }
 
