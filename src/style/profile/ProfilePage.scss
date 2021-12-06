@@ -1,6 +1,6 @@
 $page-background-color:#e3fcff;
 $secondary-background-color:#001022;
-$font-color: #fff;
+$font-color: rgb(14, 12, 12);
 
 .profile-container{
     background:$page-background-color;
@@ -11,15 +11,29 @@ $font-color: #fff;
 
 }
 .profile-hero{
-    //background-color:$secondary-background-color;
     height:80%;
     width:60%;
     padding: 24px 24px;
     display: flex;
+    flex-direction: column;
     border-radius: 30px;
     img{
         height:250px;
+        width: 250px;
         padding:4%;
+    }
+    .details-container{
+        display: flex;
+
+        .details{
+            color: #001022;
+            padding-top: 1rem;
+            min-width: 90%;
+
+            .username {
+                padding-right:10px;
+            }
+        }
     }
     
 }

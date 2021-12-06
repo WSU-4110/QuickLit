@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import API from "../../../util/API";
 import ResultListItem from "./ResultListItem";
 
+require("../../../../style/books/BookSearch.scss");
 interface BookStructure {
     id: string;
     volumeInfo: {
@@ -66,26 +67,27 @@ export default function Books () {
                     Search
                 </button>
             </form>
-            
-            {books? (
-                books.map((book) => (
-                    <ResultListItem 
-                    key={book.id}
-                    id={book.id}
-                    title={book.volumeInfo.title}
-                    link={book.volumeInfo.previewLink}
-                    authors={book.volumeInfo.authors && book.volumeInfo.authors.length > 1 ? book.volumeInfo.authors.join(", ") : book.volumeInfo.authors[0]}
-                    image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://previews.123rf.com/images/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-no-image-available-icon-flat-vector.jpg"}
-                    description={book.volumeInfo.description}
-                    saveGoogleBook={saveGoogleBook}
-                    />
-                ))
-            ) : (
-                <div>
-                    <hr/>
-                <p>No results to display</p>
-                </div>
-            )}
+            <div className="search-results-container">
+                {books? (
+                    books.map((book) => (
+                        <ResultListItem 
+                        key={book.id}
+                        id={book.id}
+                        title={book.volumeInfo.title}
+                        link={book.volumeInfo.previewLink}
+                        authors={book.volumeInfo.authors && book.volumeInfo.authors.length > 1 ? book.volumeInfo.authors.join(", ") : book.volumeInfo.authors[0]}
+                        image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://previews.123rf.com/images/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-no-image-available-icon-flat-vector.jpg"}
+                        description={book.volumeInfo.description}
+                        saveGoogleBook={saveGoogleBook}
+                        />
+                    ))
+                ) : (
+                    <div>
+                        <hr/>
+                    <p>No results to display</p>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
