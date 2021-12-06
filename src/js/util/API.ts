@@ -1,7 +1,7 @@
 // Required module
 import axios from "axios";
 import { authenticatedHttpGet, authenticatedHttpPost } from "../api/Client";
-import { API_GATEWAY_ENDPOINT } from "./Constants";
+import { BACKEND_BASE_URL } from "./Constants";
 import { QuickLitUser } from "../model/QuickLitUser";
 import { getUser } from "./AuthUtility";
 
