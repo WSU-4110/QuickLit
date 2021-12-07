@@ -36,22 +36,31 @@ export default function BookPage() {
         <div className="profile-container">
             <div className="profile-hero">
                 <div className="img-and-titl">
-                    <img src={book.imageLinks.thumbnail} alt="book pic"/>
-                    <h1 className="title"> {book.title}</h1>  
+                    <img className="cover" src={book.imageLinks.thumbnail} alt="book pic"/>
+                    <div className="title-sub">
+                        <div className="title"> {book.title}</div>  
+                        <div className="subtitle"> {book.subtitle}</div>  
+                    </div>
                 </div>
                 <div className="details-container">
-                    <h2> {book.subtitle}</h2>  
 
-                    <h3> By: {book.authors[0]}</h3>  
-                    <h4> Publisher: {book.publisher}</h4>  
-                    <h4> Publishing date: {book.publishedDate}</h4>  
-                    <h4> Page count: {book.pageCount}</h4>  
-                    <h4> language: {book.language}</h4>  
+                        <div className="author">
+                            By: {book.authors[0]}
+                        </div>
+                        <div className="publisher">
+                            Publisher: {book.publisher}
+                        </div>
+                        <div className="publishing-date">
+                            Publishing date: {book.publishedDate}
+                        </div>
+                        <div className="page-count">
+                            Page count: {book.pageCount}
+                        </div>
+                        <div className="language">
+                            language: {book.language}
+                    </div>   
                 </div>
                 <p dangerouslySetInnerHTML={{__html: book.description}} className="discription"></p>  
-
-
-                
             </div>
         </div>
     )

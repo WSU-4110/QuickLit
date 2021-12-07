@@ -1,5 +1,5 @@
 $page-background-color:#e3fcff;
-$secondary-background-color:#c0ccda;
+$secondary-background-color:#001022;
 $font-color: #fff;
 
 .profile-container{
@@ -8,6 +8,7 @@ $font-color: #fff;
     justify-content: center;
     padding: 3%;
     overflow-y: auto;
+    color: $font-color;
 }
 .profile-hero{
     background-color:$secondary-background-color;
@@ -20,80 +21,28 @@ $font-color: #fff;
     }
     .img-and-titl{
         display: flex;
-        flex-direction: row;
 
-        .title{
-            padding-top: 3rem;
+        .cover{
+            height:250px;
+            padding:4%;
+            border-radius: 40px;
+        }
+        .title-sub{
+            .title{
+                padding-top: 3rem;
+                font-size: 3rem;
+            }
         }
     }
-    img{
-        height:250px;
-        padding:4%;
-    }
+
     .details-container{
         display: flex;
-        flex-direction: column;
-        header{
-            width:490px;
-            height:80px;
-            margin:5%;
-            border:2px solid #fff;
-            border-radius:15px;
-            display: flex;
-            flex-direction: row; 
-            p{
-                padding-top: 13px;
-                padding-left: 15px;
-                color:$font-color;
-                font-family:"TisaSansPro";
-                font-size:large;
-                display:flex;
-                flex-direction: column;
-                cursor:default;
-            }
-            button{
-                background-color: #001022;
-                border:none;
-                cursor:pointer;
-                padding-top:13px;
-                padding-bottom:11px;
-                padding-left:32px;
-            
-                color:$font-color;  
-                font-family:"TisaSansPro";
-                font-size:x-large;
-                display:flex;
-                flex-direction: column;
-                small{
-                    color:$font-color;
-                    font-family:"TisaSansPro";
-                    font-size:small;
-                }
-            }
-            h1{
-                color:$font-color;
-                font-family:"TisaSansProBoldItalic";
-                padding: 0px 3px 10px 40px;
-                cursor:default;
-            }
-        }
-        div{
-            width:490px;
-            height:120px;
-            margin:5%;
-            border:2px solid #fff;
-            display: flex;
-            flex-direction: row; 
-            border-radius:15px;
-            p{
-                padding-left:8px;
-                color:$font-color;
-                font-family:"TisaSansPro";
-                font-size:large;
-                display:flex;
-                flex-direction: column;
-                cursor:default;
-            }
-        }
+        flex-direction: row;
+        padding-bottom: 5px;
+        border-bottom: 0.5px solid white;
     }  
+}
+.discription{
+    font-size: 1rem;
+    font-weight: lighter;
 }

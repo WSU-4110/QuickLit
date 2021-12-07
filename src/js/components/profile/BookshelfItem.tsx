@@ -70,10 +70,10 @@ export default function BookshelfItem(props: Props){
             </Link>
             <h1 className="bookshelf-title">{book.title}</h1>
             <h1 className="bookshelf-authors">{book.authors}</h1>
-                {style.display? ( 
+
                 <button className="del-btn"onClick={onClickDeleteBook}>
                     X
-                </button> ) : (<></>)}
+                </button>
             
         </div>
     );
