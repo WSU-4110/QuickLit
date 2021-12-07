@@ -1,9 +1,13 @@
+.all-component-wrapper{
+    display: flex;
+    justify-content: center;
+}
 .all-posts-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    max-width: 80%;
     .create-post-container{
     margin:1rem;
         .create-post{

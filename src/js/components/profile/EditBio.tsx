@@ -1,5 +1,4 @@
 import React from 'react';
-import { getUser, isSignedIn } from "../../util/AuthUtility";
 import { BACKEND_BASE_URL } from "../../util/Constants";
 import { authenticatedHttpPost } from "../../api/Client";
 
@@ -38,22 +37,27 @@ const EditBio: any = () =>{
     }
     return(
         <div className = "edit-bio">
-            <p>EditBio</p>
             <form
             className = "edit-bio-form"
             onSubmit = {handleSubmit}>
                 <div className = "createBio">
-                <input
+                    <input
                         type="text"
                         name="bio"
                         value={bioState.bio}
+                        placeholder="Enter new bio"
                         className="bio-text-input"
                         onChange={handleChange}
                         maxLength={40}
                         required
                     />
                 </div>
-                <button type="submit">Submit Changes</button>
+                <button 
+                    className="bio-text-btn"
+                    type="submit"
+                    >
+                    Change bio
+                </button>
             </form>
         </div>
     )

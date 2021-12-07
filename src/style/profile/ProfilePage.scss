@@ -19,11 +19,11 @@ $font-color: rgb(14, 12, 12);
     border-radius: 30px;
     background-color: $secondary-background-color;
     img{
-        height:250px;
-        width: 250px;
+        height:200px;
+        width: 200px;
         padding:4%;
     }
-    .d{
+    .details-card{
         border: 0px;
         display: flex;
         flex-direction: row;
@@ -31,22 +31,24 @@ $font-color: rgb(14, 12, 12);
             color: #001022;
             padding-top: 1rem;
             min-width: 90%;
+            max-width: 90%;
             flex-direction:column;
-            .username {
+            .common-name {
                 padding-right:10px;
-            }
-            h3{
+                padding-bottom: 0;
+                margin-bottom: 0;
                 color:#fff;
                 margin: 20px;
                 font-size:x-large;
             }
-            h4{
+            .username {
+                margin-top: 0;
                 color:#fff;
                 margin:20px;
                 font-size:medium;
                 font-style: italic;
             }
-            p{
+            .bio{
                 color:#fff;
                 margin-top:400px;
                 margin:20px;
@@ -54,7 +56,30 @@ $font-color: rgb(14, 12, 12);
         }
         
     }
-    
+    .edit-bio{
+        background-color: $secondary-background-color;
+
+        .edit-bio-form{
+            background-color: $secondary-background-color;
+            display: flex;
+            flex-direction: row;
+            .bio-text-input{
+                border-radius: 50px;
+                margin-right: 20px;
+            }
+
+            .bio-text-btn{
+                margin-left: 20px;
+                padding: 10px;
+                border-radius: 10px;
+
+            }
+        }
+    }
+    .posts-container{
+        width: 100%;
+        background-color: #e3fcff;
+    }
 }
 
 .bookshelf-container{
