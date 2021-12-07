@@ -36,9 +36,6 @@ export default function BookPage() {
     return (isLoading ? <div>"loading"</div> :
         !book ? <div>Book not found</div> :
             <div className="bpd_container">
-                <div className="item SearchContainer">
-                //Search Protocol Here
-                </div>
                 <div className="body_container">
                     <div className="item main_content">
                         <div className="item primaryinfoContainer">
@@ -75,7 +72,6 @@ export default function BookPage() {
                     </div>
                 </div>
                 <div className="item bookrecommendations">
-                    Book Recommendations
                     <Carousel>
                         <Carousel.Item interval={1000}>
                             <img
@@ -132,7 +128,6 @@ export default function BookPage() {
                                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                             </Carousel.Caption>
                         </Carousel.Item>
-
                     </Carousel>
                 </div>
                 <div className="item review_section">
