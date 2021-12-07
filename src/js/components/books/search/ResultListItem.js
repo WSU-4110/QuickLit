@@ -45,14 +45,13 @@ class ResultListItem extends Component {
     render () {
         
         const {book} = this.props
-        var shortenedTitle = this.props.title.substring(0,50)
+        var shortenedTitle = this.props.title.substring(0,44)
         shortenedTitle = shortenedTitle + "..."
         
         return (
 
             <div>
                 <div className="card">
-                    <div className="card-header"></div>
                     <div className="card-body">
                         <Link
                             to={{
@@ -76,7 +75,7 @@ class ResultListItem extends Component {
                             color: 'black'
                         }}
                         >
-                            {this.props.title.length < 30 ? (
+                            {this.props.title.length < 44 ? (
                             <h5 className="card-title" style={{margin: "10px 0"}}>{this.props.title}</h5>
                             ) : (
                                 <h5 className="card-title" style={{margin: "10px 0"}}>{shortenedTitle}</h5>
@@ -94,7 +93,6 @@ class ResultListItem extends Component {
 }
 
 export default ResultListItem;
-
 
 
 

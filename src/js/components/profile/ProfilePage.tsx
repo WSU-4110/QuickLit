@@ -1,9 +1,9 @@
-import DefaultUserPic from "../../../assets/images/ManBaldSunglasses.png"
-
 import {useEffect, useState } from "react";
 import { BACKEND_BASE_URL } from "../../util/Constants";
 import {isSignedIn, getUser} from "../../util/AuthUtility"
 import { authenticatedHttpGet } from "../../api/Client";
+import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
+import BookshelfItem from "./BookshelfItem";
 
 require("../../../style/profile/ProfilePage.scss");
 
@@ -26,29 +26,35 @@ export default function UserProfile(this: any){
         currentlyReading: "",
         bookShelf: []
     });
-    
+
     useEffect( () => {
     if(isSignedIn()){
-        fetchProfile(setProfile);    
+        fetchProfile(setProfile);  
     } else{
         console.log("Not Signed In");
-    }   
-   }, []);
+    } 
     
+   }, []);
+
     return (!isSignedIn()? <div>You are not signed in</div> : 
         <div className="profile-container">  
             <div className="profile-hero">
-                <div className="details-container">
-                    <div>
+                <div className="d">
+                <img src={DefaultUserPic}/>
+                    <div className="details">
                         <h3>{profile?.name}</h3>
                         <h4>{(profile?.username)}</h4>
+                        <p>{profile.bio}</p>
+                        <p>currently reading: {profile?.currentlyReading}</p>                    
                     </div>   
-                    <p>{profile.bio}</p>
-                    <p>currently reading: {profile?.currentlyReading}</p>
                 </div>
                 <div className="bookshelf-container">
-                    <div>My Bookshelf</div>
-                    { profile?.bookShelf?.map( book => <div className="bookshelf-item" key={book}>{book}</div>) }   
+                    { profile?.bookShelf?.map( book => 
+                    <div className="bookshelf-item" key={book}>
+                        <BookshelfItem 
+                        id={book}
+                        />
+                    </div>) }   
                 </div>
             </div>  
         </div>            

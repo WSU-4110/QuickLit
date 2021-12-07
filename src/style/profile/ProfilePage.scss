@@ -11,29 +11,75 @@ $font-color: rgb(14, 12, 12);
 
 }
 .profile-hero{
-    height:80%;
-    width:60%;
+    height:2000px;
     padding: 24px 24px;
     display: flex;
     flex-direction: column;
     border-radius: 30px;
+    background-color: $secondary-background-color;
     img{
         height:250px;
         width: 250px;
         padding:4%;
     }
-    .details-container{
+    .d{
+        border: 0px;
         display: flex;
-
+        flex-direction: row;
         .details{
             color: #001022;
             padding-top: 1rem;
             min-width: 90%;
-
+            flex-direction:column;
             .username {
                 padding-right:10px;
             }
+            h3{
+                color:#fff;
+                margin: 20px;
+                font-size:x-large;
+            }
+            h4{
+                color:#fff;
+                margin:20px;
+                font-size:medium;
+                font-style: italic;
+            }
+            p{
+                color:#fff;
+                margin-top:400px;
+                margin:20px;
+            }
         }
+        
     }
     
+}
+
+.bookshelf-container{
+    border: 3px solid #fff;
+    border-radius:10px;
+    margin:60px;
+    display: grid;
+    margin-left:5rem;
+    margin-right:5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 1em;
+    .bookshelf-item{
+        max-width: 400px;
+        max-height: 500px;
+        .bookshelf-image{
+            max-width: 100px;
+            max-height:140px;
+        }
+        .bookshelf-title{
+            font-size: x-small;
+            color: #fff;
+        }
+        .bookshelf-authors{
+            font-size:xx-small;
+            color:#fff;
+        }
+    }
 }
