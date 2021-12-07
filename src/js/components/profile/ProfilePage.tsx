@@ -4,6 +4,7 @@ import {useEffect, useState } from "react";
 import { BACKEND_BASE_URL } from "../../util/Constants";
 import {getUser} from "../../util/AuthUtility"
 import { authenticatedHttpGet } from "../../api/Client";
+import EditBio from "./EditBio";
 
 require("../../../style/profile/ProfilePage.scss");
 
@@ -41,6 +42,7 @@ export default function UserProfile(this: any){
                     </div>   
                     <p>{profile.bio}</p>
                     <p>currently reading: {profile?.currentlyReading}</p>
+                <EditBio/>
                 </div>
                 <div className="bookshelf-container">
                     <div>My Bookshelf</div>
