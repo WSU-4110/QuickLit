@@ -16,14 +16,14 @@ export default {
     },
     
     saveBookID: function(id: any) {
-        return authenticatedHttpPost(`${BACKEND_BASE_URL}/authenticated/bookshelf/add/" ${id}`, {})
+        return authenticatedHttpPost(BACKEND_BASE_URL + "/authenticated/bookshelf/add/" + id, {})
     },
 
     getBookshelfIDs: function() {
         return authenticatedHttpGet(`${BACKEND_BASE_URL}/authenticated/bookshelf`);
      },
 
-    deleteBook: function(id: any) {
-        return axios.delete("/api/books/" + id);
+    removeBookFromBookShelf: function(id: any) {
+        return authenticatedHttpPost(BACKEND_BASE_URL + "/authenticated/bookshelf/remove/" + id, {})
     }
 };  

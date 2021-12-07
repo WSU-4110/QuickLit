@@ -30,6 +30,8 @@ export default function UserProfile(this: any){
     useEffect( () => {
     if(isSignedIn()){
         fetchProfile(setProfile);  
+        console.log(profile.bookShelf)
+        
     } else{
         console.log("Not Signed In");
     } 
