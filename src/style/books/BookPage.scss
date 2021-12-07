@@ -1,99 +1,125 @@
-$page-background-color:#e3fcff;
-$secondary-background-color:#c0ccda;
-$font-color: #fff;
+@import "~bootstrap/scss/bootstrap";
 
-.profile-container{
-    background:$page-background-color;
-    display: flex;
-    justify-content: center;
-    padding: 3%;
-    overflow-y: auto;
-}
-.profile-hero{
-    background-color:$secondary-background-color;
-    width:60%;
-    padding: 24px 24px;
-    display: flex;
-    border-radius: 30px;
-    .discription{
-        font-size: 0.8rem;
-    }
-    .img-and-titl{
-        display: flex;
-        flex-direction: row;
+$theme-colors: (
+    "info": tomato,
+    "danger": teal
+);
 
-        .title{
-            padding-top: 3rem;
-        }
-    }
-    img{
-        height:250px;
-        padding:4%;
-    }
-    .details-container{
-        display: flex;
-        flex-direction: column;
-        header{
-            width:490px;
-            height:80px;
-            margin:5%;
-            border:2px solid #fff;
-            border-radius:15px;
-            display: flex;
-            flex-direction: row; 
-            p{
-                padding-top: 13px;
-                padding-left: 15px;
-                color:$font-color;
-                font-family:"TisaSansPro";
-                font-size:large;
-                display:flex;
-                flex-direction: column;
-                cursor:default;
-            }
-            button{
-                background-color: #001022;
-                border:none;
-                cursor:pointer;
-                padding-top:13px;
-                padding-bottom:11px;
-                padding-left:32px;
-            
-                color:$font-color;  
-                font-family:"TisaSansPro";
-                font-size:x-large;
-                display:flex;
-                flex-direction: column;
-                small{
-                    color:$font-color;
-                    font-family:"TisaSansPro";
-                    font-size:small;
-                }
-            }
-            h1{
-                color:$font-color;
-                font-family:"TisaSansProBoldItalic";
-                padding: 0px 3px 10px 40px;
-                cursor:default;
-            }
-        }
-        div{
-            width:490px;
-            height:120px;
-            margin:5%;
-            border:2px solid #fff;
-            display: flex;
-            flex-direction: row; 
-            border-radius:15px;
-            p{
-                padding-left:8px;
-                color:$font-color;
-                font-family:"TisaSansPro";
-                font-size:large;
-                display:flex;
-                flex-direction: column;
-                cursor:default;
-            }
-        }
-    }  
+*{
+    margin: 0;
+    padding: 0;
 }
+
+.item{
+    margin: 7px;
+    padding: 3rem 1rem;
+    text-align: center;
+    line-height: 1;
+    background:rgb(18, 151, 228);
+    border: 6px solid rgb(11, 121, 155);
+    border-radius: 2rem;
+    color: black;
+
+}
+
+.SearchContainer{
+
+}
+
+.body_container{
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 0px;
+}
+
+.main_content{
+    order: 3;
+    flex: 3;
+    padding:0px;
+    color:rgb(0, 0, 0);
+}
+
+.left_sidebar{
+    order: 1;
+    flex: 1;
+}
+
+// Left Side 
+.book_ImgContainer{
+    background-color: rgb(20, 53, 46);
+    border: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 570px;
+    width: 400px;
+    #pic{
+        border-radius: 1rem;
+        
+    }
+}
+// End
+
+//Main Content
+.primaryinfoContainer{
+    border: none;
+}
+
+.title_container{
+    display: flex;
+    font-size: 28px;
+    padding-top: 0px;
+    padding: 9px;
+    margin-top: 0px;
+}
+.subtitle_container{
+    display: flex;
+    font-size: 20px;
+    padding: 18px;
+}
+.author_container{
+    display: flex;
+    font-size: 18px;
+    padding: 18px;
+}
+.publishinginfo_container{
+    display: flex;
+    font-size: 17px;
+    padding: 18px;
+}
+.publishingdate_container{
+    display: flex;
+    font-size: 17px;
+    margin-top: 0px;
+    padding: 18px;
+}
+.pagecount_container{
+    display: flex;
+    font-size: 17px;
+    margin-top: 0px;
+    padding: 18px;
+}
+.booklanguage_container{
+    display: flex;
+    font-size: 17px;
+    padding-left: 19px;
+}
+.bookdescription_container{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 15px;
+    padding: 18px;
+
+    .description{
+        text-align: left;
+        font-size: 25px;
+    }
+}
+//Main Content - End
+
+.bookrecommendations{
+    height: 18vh;
+    padding: 30px;
+   
+}
+
