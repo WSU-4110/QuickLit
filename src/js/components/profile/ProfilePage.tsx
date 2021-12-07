@@ -3,8 +3,11 @@ import {useEffect, useState } from "react";
 import { BACKEND_BASE_URL } from "../../util/Constants";
 import {isSignedIn, getUser} from "../../util/AuthUtility"
 import { authenticatedHttpGet } from "../../api/Client";
-
+import EditBio from "./EditBio"
 require("../../../style/profile/ProfilePage.scss");
+
+
+
 
 interface profileStructure {
     username: string | null | undefined,
@@ -41,16 +44,20 @@ export default function UserProfile(this: any){
                 <br/>
                 <div className="details-container">
                     <div>
+                        
                         <h3>{profile?.name}</h3>
                         <h4>{(profile?.username)}</h4>
                     </div>   
-                    <p>{profile.bio}</p>
+                    <p>{profile?.bio}</p>
+                    <EditBio />
                     <p>currently reading: {profile?.currentlyReading}</p>
                 </div>
                 <div className="bookshelf-container">
                     <div>My Bookshelf</div>
                     { profile?.bookShelf?.map( book => <div className="bookshelf-item" key={book}>{book}</div>) }   
+
                 </div>
+                
             </div>  
         </div>            
     );
@@ -73,3 +80,4 @@ async function fetchProfile(setProfileHook: any){
     }
     setProfileHook(formattedData);
 }
+
