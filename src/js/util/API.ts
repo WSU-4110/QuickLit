@@ -5,7 +5,10 @@ import { BACKEND_BASE_URL } from "./Constants";
 export default {
     
     googleBooks: function(query: any) {
-        return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
+       return axios.get('https://www.googleapis.com/books/v1/volumes', {
+        params:
+            { q: query, maxResults: 24 }
+        })
     },
 
     googleBooksIDSearch: function(id: any) {
@@ -13,14 +16,14 @@ export default {
     },
     
     saveBookID: function(id: any) {
-        return authenticatedHttpPost(`${BACKEND_BASE_URL}/authenticated/bookshelf/add/" ${id}`, {})
+        return authenticatedHttpPost(BACKEND_BASE_URL + "/authenticated/bookshelf/add/" + id, {})
     },
 
     getBookshelfIDs: function() {
         return authenticatedHttpGet(`${BACKEND_BASE_URL}/authenticated/bookshelf`);
      },
 
-    deleteBook: function(id: any) {
-        return axios.delete("/api/books/" + id);
+    removeBookFromBookShelf: function(id: any) {
+        return authenticatedHttpPost(BACKEND_BASE_URL + "/authenticated/bookshelf/remove/" + id, {})
     }
 };  

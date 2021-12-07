@@ -6,6 +6,7 @@ $page-black:#001022;
     flex-direction:column;
     padding: 3%;
     height: 12.6rem;
+    margin-bottom: 4rem ;
 }
 
 .searchbar{
@@ -45,68 +46,53 @@ $page-black:#001022;
 
 .book-results{
     display: grid;
-    margin: 0px 10px 50px 10px;
+    margin-left:5rem;
+    margin-right:5rem;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 1fr;
     grid-gap: 1em;
 }
-.search-result-item{
+.card{
     width: 20rem;
-    padding: 1rem;
-    margin: 2.4rem;
-    border-radius: 20px;
+    margin: 0 auto;
+    border-radius: 5px;
     overflow: hidden;
     display:flex;
     flex-direction: column;
-    flex: 1 0 21%;
     align-items: center;
-    // background-color: #6c757d;
-
-    .card-text{
-        font-size: 0.8rem;    
-        text-decoration: none !important;
-
-    }
-
-    .card-author{
-        font-size: 0.8rem;    
-
-        .card-author-name{
-            font-style: italic;
-        }
-    }
-    h2 {
-        font-size: 1em;    
-        font-weight: 400;
-    }
-    h3, p {
-        font-weight: 300;
-    }
-
-    h3 {
-        color: #6c757d;
-        font-size: 1em;
-        padding: 10px 0 10px 0;
+    border: 2px solid #002958;
+    border-radius: 8px;
+    .card-body {
+        height: 500px;
+        padding: 50px;
     }
     p {
         color: #6c757d;
+        max-width: fit-content;
+        font-size: medium;
+        overflow:hidden;
+        max-width: 13rem;
+        height: 3rem;
     }
-
     img {
-       min-width: 50%;
-       min-height: 85%;
-       
+       width: 10rem;
+       height: 14rem;
+       border: 2px solid #00070fda;
+        
     }
     Link{
-        text-decoration: none !important;
+        color:#fff;
     }
     .view-book{
         font-style:"TisaSansPro"
     }
-    h4{
+    h5{
         color:#001022;
         text-decoration: none;
-        font-style:"TisaSansPro";
+        font-size: medium;
+        overflow-wrap:break-word;
+        max-width: 13rem;
+        height: 2.3rem;
     }
     .btn{
         text-align: center;
@@ -116,11 +102,4 @@ $page-black:#001022;
         font-size:small;
     }
 
-}
-.search-results-container {
-    max-width: 100%;
-    flex-wrap: wrap;
-    display: flex;
-    align-items: stretch;
-    align-content: space-around;
 }
