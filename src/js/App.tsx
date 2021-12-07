@@ -15,6 +15,7 @@ import SignUpAndLoginPage from './components/auth/SignUpAndLoginPage';
 
 import { ApplicationReducer } from "./redux/reducers/AppReducer";
 import { authSaga } from "./redux/sagas/AuthSaga";
+import UserPage from "./components/userPage/UserPage";
 
 require('../style/App.scss');
 
@@ -36,6 +37,7 @@ const App = () =>{
             <Switch>
               <Route path='/' component={HomePage} exact />
               <Route path='/book' component={Books} exact />
+              <Route path='/user' component={UserPage} exact />
               <Route path='/bookpage' component={BookPage} exact />
               <Route path='/discussion' component={DiscussionPage} exact />
               <Route path='/profile' component={ProfilePage} exact />

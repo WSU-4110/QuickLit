@@ -42,7 +42,6 @@ const CreatePost: any = () => {
         event.preventDefault();
         if (postState.postBody.trim()) {
             authenticatedHttpPost(BACKEND_BASE_URL + '/authenticated/post', postState).then(response => {
-            // authenticatedHttpPost('http://localhost:4000/authenticated/post', postState).then(response => {
             const status: number = response.status as number;
                 if (status === 200) {
                     setRequestState({

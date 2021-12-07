@@ -33,9 +33,7 @@ const EditBio: any = () =>{
     const handleSubmit: any = (e: any) => {
         e.preventDefault();
         if (bioState.bio.trim()) {
-            authenticatedHttpPost(BACKEND_BASE_URL + '/authenticated/userdata/bio', bioState);
-            // authenticatedHttpPost('http://localhost:4000/authenticated/userdata/bio', bioState);
-          
+            authenticatedHttpPost(BACKEND_BASE_URL + '/authenticated/userdata/bio', bioState);          
         }
     }
     return(
