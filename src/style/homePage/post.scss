@@ -1,0 +1,82 @@
+.post-wrapper{
+    padding: 2rem;
+    margin: 0.5rem;
+    min-width: 50%;
+    max-width: 50%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+
+    .post-container{
+        display: flex;
+
+        .avatar-pic{
+            height: 100px;
+            margin-right: 1rem;
+        }
+        .body-content{
+            width: 75%;
+        }
+        .post-author{
+            font-size: larger;
+            border-bottom: black solid;
+        }
+        .post-body{
+            padding-top: 1rem;
+            border-top: black dotted 0.1px;
+            white-space: initial;
+            word-wrap: break-word;
+        }
+        .post-bookID{
+            .book-icon{
+                width:25px;
+                height:25px;
+                margin-top:0.5rem;
+                margin-right:0.5rem;
+            }
+        }
+    }
+
+    .post-action-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .publish-like-btn{
+            height: 1.5rem;
+            width: 3rem;
+            cursor: pointer;
+            margin: 10px;
+
+        }
+        .comment-form{
+            display: flex;
+            flex-direction: row;
+            width: 85%;
+            padding: 0px;
+
+            .comment-form-input{
+
+            }
+            .comment-form-btn{
+                cursor: pointer;
+                width: 25%;
+            }
+        }
+    }
+    .comment-list{
+        border-bottom: 0.5px solid black; 
+
+        .comment-item{
+            display: flex;
+            flex-direction: row;
+            border-bottom: 0.5px solid black; 
+            padding: 10px;
+            
+            .comment-author{
+                margin-right: 10px;
+            }
+        }
+    }
+}

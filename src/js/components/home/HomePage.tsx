@@ -11,20 +11,24 @@ import Avatar3 from "../../../assets/images/ManBaldSunglasses.png"
 import Avatar4 from "../../../assets/images/WomanShortHairDefault.png"
 import BookIcon from "../../../assets/images/BookIcon.png"
 import { getUser } from "../../util/AuthUtility";
+import Post from "../common/Post";
 
 
 require("../../../style/homePage/homePage.scss");
 
 interface Post {
-    author: string;
-    postID: string;
+    Author: string;
+    PostId: string;
     attributes: {
-        postBody: string;
+        postBody: "",
+        comments?: {
+            commentAuthor: string;
+            commentBody: string;
+        }[];
+        likes?: string[];
     };
     creationDate: string;
     bookID?: string;
-    comments: string[];
-    likes: number;
 }
 
 type PostList = Post[];
@@ -64,24 +68,13 @@ export default function Home() {
                         {
                             posts.map(post => {
                                 return (
-                                    <div className="post-container">
-                                        <img className="avatar-pic" src={avatarArray[3]} />
-                                        <div className="body-content">
-                                            <div className="post-author">
-                                                {post.author}
-                                            </div>
-                                            {post.bookID &&
-                                                <div className="post-bookID">
-                                                    <img className="book-icon" src={BookIcon} />
-                                                    {post.bookID}
-                                                </div>
-                                            }
-                                            <div className="post-body">
-                                                {post.attributes.postBody}
-                                            </div>
-                                        </div>
-
-                                    </div>
+                                    <Post
+                                        author={post.Author}
+                                        postID={post.PostId}
+                                        attributes={post.attributes}
+                                        creationDate={post.creationDate}
+                                        bookID={post.bookID}
+                                    />
                                 );
                             }
                             )
