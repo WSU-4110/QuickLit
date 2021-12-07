@@ -85,22 +85,18 @@ export default function UserProfile(this: any){
 
                 <div className="posts-container">
                     { 
-
-
-                                posts.map(post => {
-                                    return (
-                                        <Post
-                                            author={post.Author}
-                                            postID={post.PostId}
-                                            attributes={post.attributes}
-                                            creationDate={post.creationDate}
-                                            bookID={post.bookID}
-                                        />
-                                    );
-                                }
-                                )
-
-
+                        posts.map(post => {
+                            return (
+                                <Post
+                                    author={post.Author}
+                                    postID={post.PostId}
+                                    attributes={post.attributes}
+                                    creationDate={post.creationDate}
+                                    bookID={post.bookID}
+                                />
+                            );
+                        }
+                        )
                     }   
                 </div>
             </div>  
