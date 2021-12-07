@@ -1,7 +1,10 @@
 import {useEffect, useState } from "react";
 import { BACKEND_BASE_URL } from "../../util/Constants";
-import {isSignedIn, getUser} from "../../util/AuthUtility"
+import {getUser} from "../../util/AuthUtility"
 import { authenticatedHttpGet } from "../../api/Client";
+
+import EditBio from "./EditBio";
+
 import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
 import BookshelfItem from "./BookshelfItem";
 
@@ -28,6 +31,7 @@ export default function UserProfile(this: any){
     });
 
     useEffect( () => {
+
     if(isSignedIn()){
         fetchProfile(setProfile);  
         console.log(profile.bookShelf)
@@ -49,6 +53,11 @@ export default function UserProfile(this: any){
                         <p>{profile.bio}</p>
                         <p>currently reading: {profile?.currentlyReading}</p>                    
                     </div>   
+
+                    <p>{profile.bio}</p>
+                    <p>currently reading: {profile?.currentlyReading}</p>
+                <EditBio/>
+
                 </div>
                 <div className="bookshelf-container">
                     { profile?.bookShelf?.map( book => 
@@ -65,9 +74,7 @@ export default function UserProfile(this: any){
 
 async function fetchProfile(setProfileHook: any){
     const user = getUser();
-    if(!isSignedIn() || !user){
-        console.log(BACKEND_BASE_URL);
-    }
+
     const profileCallResponse =  await authenticatedHttpGet(`${BACKEND_BASE_URL}/authenticated/userdata/all/${user.username}`);
     
     const formattedData = {

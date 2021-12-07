@@ -32,9 +32,19 @@ export const getUser = ()=>{
     const userDataString = window.localStorage.getItem(QUICKLIT_USER_KEY);
 
     if(!userDataString || userDataString.length <= 0){
-            return;
+        console.info(`userdata is undefined. Redirecting to auth page`);
+        window.location.replace("/auth");
+        return;
     }
     const userData = JSON.parse(userDataString);
+    const time = new Date().getTime();
+
+    console.info(`time: ${time}, tokenExpiration ${userData.tokenExpiration}.`);
+
+    if( time >= userData.tokenExpiration){
+        console.info(`time: ${time}, tokenExpiration ${userData.tokenExpiration}. Redirecting to auth page`);
+        window.location.replace("/auth");
+    }
     return userData;
 }
 const isTokenValid = (token: any): boolean => token.jwtToken.length > 0;
@@ -44,7 +54,8 @@ export const extractUserData = (tokenId: CognitoIdToken): QuickLitUser=>{
     const user: QuickLitUser = {
         commonName: "abe",
         username: tokenId.payload.username,
-        cognitoTokenJWT: tokenId.getJwtToken()   
+        cognitoTokenJWT: tokenId.getJwtToken(),
+        tokenExpiration: tokenId.getExpiration()*1000
     };
     return user;
 }

@@ -4,4 +4,5 @@ export interface QuickLitUser{
     commonName: string;
     username: string;
     cognitoTokenJWT: string;
+    tokenExpiration: number;
 }

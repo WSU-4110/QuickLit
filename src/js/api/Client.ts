@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { QuickLitUser } from "../model/QuickLitUser";
-import {isSignedIn, getUser} from "../util/AuthUtility";
-import { NOT_SIGNED_IN_RESPONSE } from "../util/Constants";
+import {getUser} from "../util/AuthUtility";
 export function authenticatedHttpGet(url: string) {
     
     const user: QuickLitUser = getUser();
