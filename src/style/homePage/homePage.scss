@@ -4,29 +4,127 @@
     align-items: center;
     justify-content: center;
 
+    .create-post-container{
+    margin:1rem;
+        .create-post{
+            padding: 1rem;
+            margin: 0.5rem;
+        }
+        .create-post-header{
+            display:flex;
+            align-self:stretch;
+            h4{
+                margin:0px;
+            }
+        }
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        .post-body-input{
+            height:50px;
+            border-radius: 10px;
+            resize:none;
+            width:500px;
+            font-family: "Poppins", sans-seri;
+        }
+            
+        .post-book-input{
+            height:30px;
+            border-radius: 10px;
+            resize:none;
+            width:500px;
+            font-family: "Poppins", sans-seri;
+        }
+        
+        button{
+            border-radius:10px;
+        }
+        .create-post-footer{
+            flex-direction: row;
+            align-self:stretch;
+            .create-post-book-tag{
+                .book-tag-button{
+                    float: left;
+                    .book-icon{
+                        width:25px;
+                        height:25px;
+                    }
+                }
+            }
+            .publish-post-btn{
+                float: right;
+                
+            }
+        }
+
+    }
+
     .post-container{
         padding: 2rem;
         margin: 0.5rem;
         min-width: 50%;
+        max-width: 50%;
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         display: flex;
 
-        img{
+        .avatar-pic{
             height: 100px;
             margin-right: 1rem;
         }
         .body-content{
-            width: 100%;
+            width: 75%;
         }
         .post-author{
             font-size: larger;
             border-bottom: black solid;
         }
         .post-body{
-            padding-top: 2rem;
+            padding-top: 1rem;
             border-top: black dotted 0.1px;
+            white-space: initial;
+            word-wrap: break-word;
+        }
+        .post-bookID{
+            .book-icon{
+                width:25px;
+                height:25px;
+                margin-top:0.5rem;
+                margin-right:0.5rem;
+            }
         }
     }
 }
 
+.loading-homefeed-status{
+    text-align: center;
+    padding:100px;
+}
+
+.submitting-post-creation{
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    margin:1rem auto;
+    padding:0.1rem;
+    border: 3px solid gray;
+}
+
+.success-post-creation{
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    margin:1rem auto;
+    padding:0.1rem;
+    background-color:lightgreen;
+    border: 3px solid gray;
+}
+
+.error-post-creation{
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    margin:1rem auto;
+    padding:0.1rem;
+    background-color:red;
+    border: 3px solid gray;
+}

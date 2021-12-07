@@ -2,7 +2,7 @@ import DefaultUserPic from "../../../assets/images/ManBaldSunglasses.png"
 
 import {useEffect, useState } from "react";
 import { BACKEND_BASE_URL } from "../../util/Constants";
-import {isSignedIn, getUser} from "../../util/AuthUtility"
+import {getUser} from "../../util/AuthUtility"
 import { authenticatedHttpGet } from "../../api/Client";
 
 require("../../../style/profile/ProfilePage.scss");
@@ -28,14 +28,10 @@ export default function UserProfile(this: any){
     });
     
     useEffect( () => {
-    if(isSignedIn()){
         fetchProfile(setProfile);    
-    } else{
-        console.log("Not Signed In");
-    }   
    }, []);
     
-    return (!isSignedIn()? <div>You are not signed in</div> : 
+    return (
         <div className="profile-container">  
             <div className="profile-hero">
                 <div className="details-container">
@@ -57,9 +53,7 @@ export default function UserProfile(this: any){
 
 async function fetchProfile(setProfileHook: any){
     const user = getUser();
-    if(!isSignedIn() || !user){
-        console.log(BACKEND_BASE_URL);
-    }
+
     const profileCallResponse =  await authenticatedHttpGet(`${BACKEND_BASE_URL}/authenticated/userdata/all/${user.username}`);
     
     const formattedData = {
