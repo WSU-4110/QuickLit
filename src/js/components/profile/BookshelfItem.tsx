@@ -83,7 +83,7 @@ export default function BookshelfItem(props: Props){
 async function hideStyle(setStyle: (display: any)=> void) {
     setTimeout(() => {setStyle({
         display:false
-    })}, 500);
+    })}, 1500);
     
     }
 
