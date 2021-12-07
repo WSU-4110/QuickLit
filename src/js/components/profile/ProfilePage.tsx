@@ -3,8 +3,8 @@ import { BACKEND_BASE_URL } from "../../util/Constants";
 import {getUser, isSignedIn} from "../../util/AuthUtility"
 import { authenticatedHttpGet } from "../../api/Client";
 
-/* import EditBio from "./EditBio";
- */
+import EditBio from "./EditBio";
+
 import DefaultUserPic from "../../../assets/images/DefaultUserPic.jpeg";
 import BookshelfItem from "./BookshelfItem";
 
@@ -53,8 +53,8 @@ export default function UserProfile(this: any){
                     </div>   
                     <p>{profile.bio}</p>
                     <p>currently reading: {profile?.currentlyReading}</p>
-{/*                 <EditBio/>
- */}                </div>
+                <EditBio/>
+                </div>
                 <div className="bookshelf-container">
                     { profile?.bookShelf?.map( book => 
                     <div className="bookshelf-item" key={book}>
