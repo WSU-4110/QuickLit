@@ -122,6 +122,9 @@ const Post = (props: Props) => {
                 <button className="publish-like-btn" onClick={publishLike}>
                     {isLikedByUser? "unlike": "like"}
                 </button>
+                <button className="publish-like-btn">
+                    {"report"}
+                </button>
                 <form className="comment-form" onSubmit={publishComment}>
 
                     <input 

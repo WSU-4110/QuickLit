@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { authenticatedHttpGet } from "../../../api/Client";
 import API from "../../../util/API";
 import { BACKEND_BASE_URL } from "../../../util/Constants";
+import searchicon from "../../../../assets/icons/searchicon.png"
 import ResultListItem from "./ResultListItem";
 
 require("../../../../style/books/BookSearch.scss");
@@ -65,7 +66,7 @@ export default function Books () {
         setBooks([]);
         setUsers([]);
         searchBooks();
-        searchPeople();
+         searchPeople(); 
     };
     const saveGoogleBook = (bookID: string) => {
         API.saveBookID(bookID)
@@ -74,29 +75,67 @@ export default function Books () {
     }
     
     return (
-        <div>
+        <><div className="search-container">
+            <div className="searchbar">
             <form>
-                <h5>Search for books</h5>
-                <div className="form-group">
-                    <input
-                        className="form-control" 
-                        value={searchTerm}
-                        onChange={handleInputChange}
-                        name="search"
-                        placeholder="e.g. Harry Potter"
-                        />
-                </div>
-                <button 
-                    onClick={handleFormSubmit}
-                    className="btn submitBtn" 
-                    style={{backgroundColor: "#2196f3", color: "white", marginBottom: "10px"}}
-                >
-                    Search
-                </button>
+                <input
+                    value={searchTerm}
+                    onChange={handleInputChange}
+                    name="search"
+                    placeholder="Search"
+                    autoComplete="off"
+                    />
+                <button onClick={handleFormSubmit}><img src={searchicon}></img></button>
             </form>
-            <div className="search-results-container">
-                
-                <ul className="user-search-result-list">
+            </div>
+        </div>
+        <ul className="user-search-result-list">
+            {
+                users.map((user) =>{
+                    return (
+                        <Link
+                            to={{
+                                pathname: "/user",
+                                state:  user
+                            }}
+                        >
+                            <li className="user-search-result-item">{user}</li>
+                        </Link>
+
+                    );
+                })
+            }
+        </ul>
+
+        <div className="book-results-container">
+            <div className="book-results">
+                {books? (
+                        books.map((book) => {
+                            if(book.volumeInfo.authors){
+                                return (
+                                <ResultListItem 
+                                key={book.id}
+                                id={book.id}
+                                title={book.volumeInfo.title}
+                                link={book.volumeInfo.previewLink}
+                                authors={book.volumeInfo.authors && book.volumeInfo.authors.length > 1 ? book.volumeInfo.authors.join(", ") : book.volumeInfo.authors[0]}
+                                image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://previews.123rf.com/images/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-no-image-available-icon-flat-vector.jpg"}
+                                description={book.volumeInfo.description}
+                                saveGoogleBook={saveGoogleBook}
+                                />)
+                            }
+                            return <></>;
+
+                        })
+                    ) : ( <></> )}
+            </div>
+        </div></>
+    )
+}
+
+
+/*
+<ul className="user-search-result-list">
                     {
                         users.map((user) =>{
                             return (
@@ -113,33 +152,4 @@ export default function Books () {
                         })
                     }
                 </ul>
-                
-                
-                {books? (
-                    books.map((book) => {
-                        if(book.volumeInfo.authors){
-                            return (
-                            <ResultListItem 
-                            key={book.id}
-                            id={book.id}
-                            title={book.volumeInfo.title}
-                            link={book.volumeInfo.previewLink}
-                            authors={book.volumeInfo.authors && book.volumeInfo.authors.length > 1 ? book.volumeInfo.authors.join(", ") : book.volumeInfo.authors[0]}
-                            image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://previews.123rf.com/images/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-no-image-available-icon-flat-vector.jpg"}
-                            description={book.volumeInfo.description}
-                            saveGoogleBook={saveGoogleBook}
-                            />)
-                        }
-                        return <></>;
-
-                    })
-                ) : (
-                    <div>
-                        <hr/>
-                    <p>No results to display</p>
-                    </div>
-                )}
-            </div>
-        </div>
-    )
-}
+*/

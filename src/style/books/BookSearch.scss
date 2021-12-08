@@ -46,6 +46,7 @@ $page-black:#001022;
 
 .book-results{
     display: grid;
+    margin-top: 3rem;
     margin-left:5rem;
     margin-right:5rem;
     grid-template-columns: repeat(4, 1fr);
@@ -100,6 +101,18 @@ $page-black:#001022;
         width:8.59rem;
         font-family: "TisaSansPro";
         font-size:small;
+    }
+}
+
+.user-search-result-list{
+    list-style: none;
+    display: flex;
+    border-bottom: 1px solid black;
+    padding-left: 5rem;
+    padding-bottom: 1rem;
+    li{
+        margin-right: 1rem;
+        font-size: 1.5rem;
     }
 
 }
