@@ -1,6 +1,5 @@
-const getBaseURL = ()=>{
-    // return "http://quicklit-env.eba-99zv9awt.us-east-1.elasticbeanstalk.com"
-    return "http://localhost:4000"
+const getBaseURL = () => {
+    return "http://quicklit-env.eba-99zv9awt.us-east-1.elasticbeanstalk.com"
 }
 export const BACKEND_BASE_URL = getBaseURL();
 
