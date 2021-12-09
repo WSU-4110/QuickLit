@@ -1,4 +1,5 @@
 # QuickLit
+This is the [backend repository](https://github.com/abe-mused/QuickLitBackend) that's powering this web app. Ask me ([@abe-mused](https://github.com/abe-mused)) for access.
 
 QuickLit is a preemptive solution to a future problem this generation will face...
  There is, simply, a distinct lack of a dedicated medium for discussing books. 
