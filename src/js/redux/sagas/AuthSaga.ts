@@ -8,8 +8,8 @@ import {
 import { Actions, ActionTypes } from "../modules/Auth";
 import { ActionWithPayload } from "../ReduxActions";
 
-import UserPool from "../../util/UserPool";
-import { extractUserData, signin } from "../../util/AuthUtility";
+import {UserPool} from "../../util/Constants";
+import { signin } from "../../util/AuthUtility";
 
 export function* sendSignInRequest(
     action: ActionWithPayload<

@@ -1,4 +1,4 @@
-import RoutesUrls from '../../util/RouteURL';
+import { RoutesUrls } from '../../util/Constants';
 
 require('../../../style/navbar/Navbar.scss');
 
