@@ -38,7 +38,7 @@ interface RequestState {
     isError: boolean;
 }
 
-const avatarArray = [Avatar0, Avatar1, Avatar2, Avatar3, Avatar4];
+const avatarArray = [Avatar4, Avatar1, Avatar2, Avatar3, Avatar0];
 
 
 export default function Home() {
@@ -58,7 +58,7 @@ export default function Home() {
             </div>
             :
             requestState.isError ?
-                <div className="loading-homefeed-status">
+                <div className="error-homefeed-status">
                     <h1>Error: Please sign in to view homefeed</h1>
                 </div>
                 :
@@ -69,11 +69,11 @@ export default function Home() {
                             posts.map(post => {
                                 return (
                                     <Post
-                                        author={post.Author}
                                         postID={post.PostId}
                                         attributes={post.attributes}
                                         creationDate={post.creationDate}
                                         bookID={post.bookID}
+                                        author={post.Author}
                                     />
                                 );
                             }

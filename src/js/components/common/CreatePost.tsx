@@ -42,7 +42,7 @@ const CreatePost: any = () => {
         event.preventDefault();
         if (postState.postBody.trim()) {
             authenticatedHttpPost(BACKEND_BASE_URL + '/authenticated/post', postState).then(response => {
-            const status: number = response.status as number;
+                const status: number = response.status as number;
                 if (status === 200) {
                     setRequestState({
                         loading: false,
@@ -118,7 +118,7 @@ const CreatePost: any = () => {
                                 <img className="book-icon" src={BookIcon} />
                             </button>
                         </div>
-                        <div className="publish-post-btn">
+                        <div className="publish-post-button">
                             <button
                                 type="submit"
                                 title="Publish your post"
