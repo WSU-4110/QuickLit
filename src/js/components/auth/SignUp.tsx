@@ -1,6 +1,6 @@
 import { CognitoUserAttribute } from "amazon-cognito-identity-js";
 import React, { useState } from "react";
-import { UserPool } from "../../util/Constants";
+import UserPool from "../../util/UserPool";
 
 export default function SignUp(){
 
