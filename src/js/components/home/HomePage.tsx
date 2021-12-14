@@ -4,11 +4,6 @@ import { BACKEND_BASE_URL } from "../../util/Constants";
 import { authenticatedHttpGet } from "../../api/Client"
 import CreatePost from "../common/CreatePost"
 
-import Avatar0 from "../../../assets/images/YellowGlasses.png";
-import Avatar1 from "../../../assets/images/DefaultUserPic.jpeg"
-import Avatar2 from "../../../assets/images/GirlBrownHair.png"
-import Avatar3 from "../../../assets/images/ManBaldSunglasses.png"
-import Avatar4 from "../../../assets/images/WomanShortHairDefault.png"
 import BookIcon from "../../../assets/images/BookIcon.png"
 import { getUser } from "../../util/AuthUtility";
 import Post from "../common/Post";
@@ -38,9 +33,6 @@ interface RequestState {
     isError: boolean;
 }
 
-const avatarArray = [Avatar4, Avatar1, Avatar2, Avatar3, Avatar0];
-
-
 export default function Home() {
     const [posts, setPosts] = useState<PostList>([]);
     const [requestState, setRequestState] = useState<RequestState>({
@@ -59,7 +51,7 @@ export default function Home() {
             :
             requestState.isError ?
                 <div className="error-homefeed-status">
-                    <h1>Error: Please sign in to view homefeed</h1>
+                    <h1>Error: Something went wrong. (Hint: You might not be logged in)</h1>
                 </div>
                 :
                 <div className="all-component-wrapper">
