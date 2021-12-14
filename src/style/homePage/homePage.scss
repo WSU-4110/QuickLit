@@ -54,7 +54,7 @@
                     }
                 }
             }
-            .publish-post-btn{
+            .publish-post-button{
                 float: right;
                 
             }
@@ -90,6 +90,17 @@
 .error-post-creation{
     border-radius: 10px;
     width: 50%;
+    text-align: center;
+    margin:1rem auto;
+    padding:0.1rem;
+    background-color:red;
+    border: 3px solid gray;
+}
+
+
+.error-homefeed-status{
+    border-radius: 10px;
+    width: 70%;
     text-align: center;
     margin:1rem auto;
     padding:0.1rem;
